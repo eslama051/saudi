@@ -1,29 +1,42 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-Vue.use(VueRouter)
+// pages
+import AppContentWrapper from "../pages/AppContentWrapper.vue";
+import AuthWrapper from "../pages/AuthWrapper.vue";
+
+// contents views
+import HomePage from "../views/appContents/HomePage.vue";
+import AboutPage from "../views/appContents/AboutPage.vue";
+import OffersPage from "../views/appContents/OffersPage.vue";
+import CompetitionsPage from "../views/appContents/CompetitionsPage.vue";
+import ContactPage from "../views/appContents/ContactPage.vue";
+
+// not found
+import NotFound from "../pages/NotFound.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    component: AppContentWrapper,
+    children: [
+      { path: "", component: HomePage },
+      { path: "about", component: AboutPage },
+      { path: "offers", component: OffersPage },
+      { path: "competitions", component: CompetitionsPage },
+      { path: "contact", component: ContactPage },
+    ],
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+  { path: "/auth", component: AuthWrapper },
+  { path: "/:notFound(.*)", component: NotFound },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+  linkActiveClass: "active-link",
+});
 
-export default router
+export default router;
