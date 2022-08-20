@@ -9,13 +9,14 @@ import "bootstrap/dist/css/bootstrap.css";
 // //import main scss
 import "./assets/scss/main.scss";
 
-//bootstrap vue
+//
 
-// import { BootstrapVue, BootstrapVueIcons } from "bootstrap-vue";
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap-vue/dist/bootstrap-vue.css";
-// Vue.use(BootstrapVue);
-// Vue.use(BootstrapVueIcons);
+import owlCarousel from "vue-owl-carousel2";
+Vue.component("owl-carousel", owlCarousel);
+
+//base button
+import BaseButton from "./components/ui/BaseButton.vue";
+Vue.component("base-button", BaseButton);
 
 //font awesome
 
@@ -30,7 +31,13 @@ import {
   faUser,
   faBars,
   faXmark,
+  faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 library.add(
   faUserSecret,
   faSearch,
@@ -39,7 +46,11 @@ library.add(
   faCoffee,
   faUser,
   faBars,
-  faXmark
+  faXmark,
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+  faArrowLeftLong
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

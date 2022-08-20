@@ -3,7 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-family: somarMed;
+  overflow-x: hidden;
+  width: 100vw;
+}
 ul {
   list-style-type: none;
 }

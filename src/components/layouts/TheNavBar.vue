@@ -60,27 +60,29 @@
               <font-awesome-icon icon="fa-xmark"></font-awesome-icon>
             </button>
             <li>
-              <router-link class="text-decoration-none" to="/"
+              <router-link class="text-decoration-none link-small" to="/"
                 >الرئيسيه
               </router-link>
             </li>
             <li>
-              <router-link class="text-decoration-none" to="/about"
+              <router-link class="text-decoration-none link-small" to="/about"
                 >من نحن
               </router-link>
             </li>
             <li>
-              <router-link class="text-decoration-none" to="/offers"
+              <router-link class="text-decoration-none link-small" to="/offers"
                 >العروض
               </router-link>
             </li>
             <li>
-              <router-link class="text-decoration-none" to="/competitions"
+              <router-link
+                class="text-decoration-none link-small"
+                to="/competitions"
                 >مسابقات و جوائز
               </router-link>
             </li>
             <li>
-              <router-link class="text-decoration-none" to="/contact"
+              <router-link class="text-decoration-none link-small" to="/contact"
                 >اتصل بنا
               </router-link>
             </li>
@@ -102,6 +104,15 @@ export default {
     showNav() {
       document.getElementById("nav-link-small").classList.add("show-nav-small");
     },
+  },
+  mounted() {
+    document.querySelectorAll(".link-small").forEach((link) => {
+      link.addEventListener("click", () => {
+        document
+          .getElementById("nav-link-small")
+          .classList.remove("show-nav-small");
+      });
+    });
   },
 };
 </script>
