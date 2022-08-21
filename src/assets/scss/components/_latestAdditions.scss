@@ -1,0 +1,102 @@
+.lastest-addition-section {
+  .latest-additions-title {
+    padding-bottom: 3rem;
+    font-size: 1.3rem;
+  }
+  position: relative;
+
+  .latest-item {
+    text-align: right;
+    color: #43290a;
+    h2 {
+      font-size: 0.8rem;
+    }
+    h3 {
+      color: #958a7e;
+      font-size: 10px;
+    }
+    .img-container {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0rem;
+
+      .prices {
+        display: flex;
+        column-gap: 0.5rem;
+        font-size: 0.8rem;
+      }
+      .oldPrice,
+      .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+      .oldPrice {
+        color: #958a7e;
+        // margin: 1rem;
+        text-decoration: line-through;
+      }
+    }
+  }
+  .owl-nav {
+    .owl-next {
+      position: absolute;
+      display: hidden !important;
+      color: #f7f5ef !important;
+      background-color: inherit !important;
+      top: 30%;
+      right: 0;
+      transform: translateX(150%);
+
+      &::before {
+        color: #43290a;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f178";
+        font-size: 1.5rem;
+        transition: all 0.5s;
+      }
+      &:hover {
+        &::before {
+          color: #958a7e;
+        }
+      }
+    }
+    .owl-prev {
+      position: absolute;
+      display: hidden !important;
+      color: #f7f5ef !important;
+      background-color: #f7f5ef !important;
+      top: 30%;
+      left: 0;
+      transform: translateX(-150%);
+      &::before {
+        color: #43290a;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f060";
+        font-size: 1.5rem;
+        transition: all 0.5s;
+      }
+      &:hover {
+        &::before {
+          color: #958a7e;
+        }
+      }
+    }
+  }
+  .owl-dots {
+    display: none;
+  }
+}

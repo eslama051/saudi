@@ -1,7 +1,7 @@
 <template>
   <header class="nav-bar-header">
     <nav>
-      <div class="container p-0">
+      <div class="container py-0 my-0">
         <div class="nav-wrapper">
           <span>
             <router-link to="/"
@@ -46,10 +46,22 @@
               </div>
             </li>
             <li>
-              <div><img src="../../assets/images/heart.svg" alt="" /></div>
+              <div>
+                <img
+                  class="nav-icon-img"
+                  src="../../assets/images/heart.svg"
+                  alt=""
+                />
+              </div>
             </li>
             <li>
-              <div><img src="../../assets/images/user.svg" alt="" /></div>
+              <div>
+                <img
+                  class="nav-icon-img"
+                  src="../../assets/images/user.svg"
+                  alt=""
+                />
+              </div>
             </li>
           </ul>
           <div class="nav-toggle" @click="showNav">

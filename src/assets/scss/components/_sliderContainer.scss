@@ -1,5 +1,5 @@
 .hero {
-  height: calc(100vh - 86px);
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   background-color: #f7f5ef;
@@ -16,11 +16,11 @@
     a {
       color: #f7f5ef;
       background-color: #43290a;
-      height: 40px;
-      width: 40px;
+      height: 35px;
+      width: 35px;
       margin: 1rem;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1rem;
       border: 1px solid #43290a;
       display: flex;
       align-items: center;
@@ -42,7 +42,7 @@
     border-bottom-left-radius: 30px;
 
     .owl-itema {
-      height: calc(100vh - 86px);
+      height: calc(100vh - 60px);
       width: 100%;
       background-color: rgb(3, 29, 29);
       .slider-img-wrapper {
@@ -63,17 +63,18 @@
       // transform: rotate(90deg);
       display: flex;
       flex-direction: column;
-      row-gap: 1.2rem;
+      // row-gap: 0.5rem;
       .owl-dot span {
         background-color: #43290a;
-        padding: 8px;
-        outline: 4px solid #43290a;
-        margin: 1rem;
-        outline-offset: 4px;
+        padding: 5px;
+        outline: 2px solid #43290a;
+        margin: 1rem 1rem;
+        outline-offset: 2px;
       }
       .owl-dot.active span {
         background-color: #43290a;
         opacity: 0.6;
+        transform: scale(0.8);
       }
     }
     .slider-content-wrapper {

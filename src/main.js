@@ -18,6 +18,11 @@ Vue.component("owl-carousel", owlCarousel);
 import BaseButton from "./components/ui/BaseButton.vue";
 Vue.component("base-button", BaseButton);
 
+// START:: IMPORTING FONT AWESOME
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
+// END:: IMPORTING FONT AWESOME
+
 //font awesome
 
 import { library } from "@fortawesome/fontawesome-svg-core";

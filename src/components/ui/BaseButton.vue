@@ -1,11 +1,16 @@
 <template>
   <span>
-    <button class="base-button" @click="this.$emit('click')" v-if="!link">
-      <font-awesome-icon icon="fa-arrow-left-long"></font-awesome-icon>
+    <button
+      class="base-button"
+      @click="this.$emit('click')"
+      :class="reverse"
+      v-if="!link"
+    >
+      <font-awesome-icon :icon="`fa-arrow-${dir}-long`"> </font-awesome-icon>
       {{ title }}
     </button>
     <router-link class="base-link" v-else :to="to">
-      <font-awesome-icon icon="fa-arrow-left-long"></font-awesome-icon
+      <font-awesome-icon icon="fa-arrow-left-long"> </font-awesome-icon
       >{{ title }}</router-link
     >
   </span>
@@ -13,7 +18,30 @@
 
 <script>
 export default {
-  props: ["title", "link", "to"],
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+    to: {
+      type: String,
+      required: false,
+    },
+    dir: {
+      type: String,
+      required: false,
+      default: "left",
+    },
+    reverse: {
+      type: String,
+      required: false,
+    },
+  },
   methods: {},
 };
 </script>
@@ -29,5 +57,8 @@ export default {
 }
 a {
   color: #43290a;
+}
+.reverse {
+  flex-direction: row-reverse;
 }
 </style>

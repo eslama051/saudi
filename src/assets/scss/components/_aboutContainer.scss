@@ -8,13 +8,14 @@
     align-items: center;
     flex-direction: row-reverse;
     .about-info {
-      background-color: #f7f5ef;
+      background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
       padding: 4rem 1rem 4rem 2rem;
       border-top-right-radius: 30px;
       border-bottom-right-radius: 20px;
       position: relative;
       margin-left: auto;
       flex-grow: 6;
+      font-size: 0.7rem;
 
       h1 {
         margin-bottom: 2rem;

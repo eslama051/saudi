@@ -1,0 +1,41 @@
+.adver-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  //   color: white;
+  font-family: montserrat;
+  font-weight: bold;
+  .adver-item {
+    position: relative;
+    // border-radius: 20px;
+    overflow: hidden;
+    height: 320px;
+    &.item1 {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    &.item2 {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      opacity: 0.7;
+    }
+    .adver-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h1 {
+        font-family: somarBold;
+      }
+      .adver-btn {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
