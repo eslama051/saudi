@@ -1,5 +1,5 @@
 .nav-bar-header {
-  height: 60px;
+  height: 75px;
 }
 .nav-wrapper {
   font-family: somarMed;
@@ -9,7 +9,7 @@
   align-items: center;
   flex-wrap: wrap;
   z-index: 1000;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   a {
     color: #43290a;
   }
@@ -23,7 +23,7 @@
   }
   .nav-links a {
     position: relative;
-    height: 60px;
+    height: 75px;
     display: inline-block;
     // padding: 0.3rem;
     display: flex;

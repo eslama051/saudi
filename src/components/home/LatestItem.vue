@@ -1,5 +1,5 @@
 <template>
-  <div class="latest-item">
+  <div class="latest-item" @click="openProductDetails(item.id)">
     <div class="img-container">
       <img :src="item.img" alt="" />
     </div>
@@ -26,5 +26,10 @@
 <script>
 export default {
   props: ["item"],
+  methods: {
+    openProductDetails(id) {
+      this.$router.push(`/product-details/${id}`);
+    },
+  },
 };
 </script>

@@ -5,4 +5,10 @@ export default {
   latest(state) {
     return state.latest;
   },
+  mostSelled(state) {
+    return state.mostSelled;
+  },
+  product: (state) => (id) => {
+    return state.mostSelled.find((item) => item.id == id);
+  },
 };

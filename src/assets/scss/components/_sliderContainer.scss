@@ -1,5 +1,5 @@
 .hero {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 75px);
   display: flex;
   justify-content: center;
   background-color: #f7f5ef;
@@ -42,7 +42,7 @@
     border-bottom-left-radius: 30px;
 
     .owl-itema {
-      height: calc(100vh - 60px);
+      height: calc(100vh - 75px);
       width: 100%;
       background-color: rgb(3, 29, 29);
       .slider-img-wrapper {

@@ -1,6 +1,6 @@
 <template>
   <section class="about-section">
-    <div class="container">
+    <div class="container about-container">
       <div class="about-info">
         <h1>معلومات عنا</h1>
         <p>

@@ -1,7 +1,7 @@
 <template>
   <section class="lastest-addition-section">
     <div class="container section-container text-center">
-      <h1 class="latest-additions-title">أحدث الإضافات</h1>
+      <h1 class="latest-additions-title section-title">أحدث الإضافات</h1>
       <owl-carousel :margin="20" :items="4" class="latest-additions-items">
         <latest-item
           v-for="item in latest"

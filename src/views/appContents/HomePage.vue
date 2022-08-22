@@ -5,6 +5,7 @@
     <categories-home></categories-home>
     <latest-additions></latest-additions>
     <adver-banner />
+    <most-selled></most-selled>
   </div>
 </template>
 <script>
@@ -13,6 +14,7 @@ import AboutContainer from "../../components/home/AboutContainer.vue";
 import CategoriesHome from "../../components/home/CategoriesHome.vue";
 import LatestAdditions from "../../components/home/LatestAdditions.vue";
 import AdverBanner from "../../components/home/AdverBannner.vue";
+import MostSelled from "../../components/home/MostSelled.vue";
 export default {
   components: {
     SliderContainer,
@@ -20,6 +22,7 @@ export default {
     CategoriesHome,
     LatestAdditions,
     AdverBanner,
+    MostSelled,
   },
 };
 </script>

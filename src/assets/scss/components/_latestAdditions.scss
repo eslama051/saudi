@@ -1,19 +1,16 @@
-.lastest-addition-section {
-  .latest-additions-title {
-    padding-bottom: 3rem;
-    font-size: 1.3rem;
-  }
+.lastest-addition-section,
+.carousel-container {
   position: relative;
 
   .latest-item {
     text-align: right;
     color: #43290a;
     h2 {
-      font-size: 0.8rem;
+      font-size: 1.3rem;
     }
     h3 {
       color: #958a7e;
-      font-size: 10px;
+      font-size: 1rem;
     }
     .img-container {
       border-radius: 10px;
@@ -29,11 +26,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 0rem;
+      font-size: 1.3rem;
 
       .prices {
         display: flex;
         column-gap: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
       .oldPrice,
       .price {
