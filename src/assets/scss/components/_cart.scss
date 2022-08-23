@@ -1,0 +1,104 @@
+.cart-component {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+
+  .cart-component-container {
+    width: 50vw;
+    max-width: 40rem;
+    margin-left: auto;
+    height: 100%;
+    position: relative;
+    background: #f7f5ef;
+    text-align: center;
+    padding: 1rem 2rem;
+    box-shadow: -8px 2px 19px 0px rgba(0, 0, 0, 0.75);
+    .close-cart {
+      border: none;
+      background-color: inherit;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    overflow-y: scroll;
+
+    .cart-item {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      .cart-item-info {
+        display: flex;
+        text-align: right;
+        // flex: 1;
+        align-items: flex-start;
+
+        flex-direction: row-reverse;
+        column-gap: 1rem;
+        flex-wrap: wrap;
+        .cart-item-img-container {
+          width: 120px;
+          height: 120px;
+          overflow: hidden;
+          border-radius: 10px;
+        }
+        h2 {
+          font-size: 1.3rem;
+          &.item-price {
+            color: green;
+          }
+        }
+        h3 {
+          color: gray;
+          font-size: 15px;
+        }
+      }
+      .order-quantity {
+        background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+        padding: 0.2rem 1rem;
+        border-radius: 20px;
+        font-size: 1.3rem;
+        .order-quantity-input {
+          padding: 0rem 2rem;
+        }
+        .decrement,
+        .increment {
+          cursor: pointer;
+        }
+      }
+      button {
+        display: block;
+        border: none;
+        transition: all 0.3s;
+        font-size: 1.2rem;
+        &:hover {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+      }
+    }
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
+.show-cart {
+  transform: translateX(0%);
+}

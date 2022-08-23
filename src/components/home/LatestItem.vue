@@ -7,7 +7,10 @@
     <h3>{{ item.type }}</h3>
     <div class="itemfooter-container">
       <div class="item-footer">
-        <font-awesome-icon icon=" fa-heart"></font-awesome-icon>
+        <font-awesome-icon
+          class="heart-icon"
+          icon=" fa-heart"
+        ></font-awesome-icon>
         <div class="prices">
           <span class="oldPrice">
             <span>{{ item.oldPrice }}</span

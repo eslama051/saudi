@@ -5,6 +5,11 @@
   .latest-item {
     text-align: right;
     color: #43290a;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
     h2 {
       font-size: 1.3rem;
     }
@@ -27,7 +32,12 @@
       align-items: center;
       padding: 0rem;
       font-size: 1.3rem;
-
+      .heart-icon {
+        transition: all 0.3s;
+        &:hover {
+          color: red;
+        }
+      }
       .prices {
         display: flex;
         column-gap: 0.5rem;
