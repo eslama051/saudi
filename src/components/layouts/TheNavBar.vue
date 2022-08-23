@@ -41,8 +41,10 @@
               <div><font-awesome-icon icon="fa-search" /></div>
             </li>
             <li>
-              <div class="cart">
-                <font-awesome-icon icon="fa-shopping-cart" /><span>1</span>
+              <div @click="openCart" class="cart">
+                <font-awesome-icon icon="fa-shopping-cart" /><span>{{
+                  cartAmount()
+                }}</span>
               </div>
             </li>
             <li>
@@ -116,6 +118,12 @@ export default {
     showNav() {
       document.getElementById("nav-link-small").classList.add("show-nav-small");
     },
+    openCart() {
+      this.$store.dispatch("openCart");
+    },
+    cartAmount() {
+      return this.$store.getters.itemAmount;
+    },
   },
   mounted() {
     document.querySelectorAll(".link-small").forEach((link) => {
@@ -125,6 +133,7 @@ export default {
           .classList.remove("show-nav-small");
       });
     });
+    console.log(this.$store.getters.itemAmount);
   },
 };
 </script>

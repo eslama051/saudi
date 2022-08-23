@@ -84,11 +84,13 @@
       span {
         position: absolute;
         color: white;
-        transform: translate(30%, -20%) scale(0.6);
-        height: 20px;
+        transform: translate(50%, -40%) scale(0.6);
+        // height: 40px;
+        // color: black;
         top: 0;
-        left: 0;
-        width: 20px;
+        right: 0;
+        // width: 40px;
+        padding: 0.3rem 0.7rem;
         border-radius: 50%;
         display: flex;
         justify-content: center;

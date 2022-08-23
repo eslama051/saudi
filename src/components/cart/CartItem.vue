@@ -12,17 +12,31 @@
     </div>
     <div class="item-control">
       <div class="order-quantity">
-        <span class="decrement">-</span>
-        <span class="order-quantity-input">0</span>
-        <span class="increment">+</span>
+        <span class="decrement" @click="decrementQuan">-</span>
+        <span class="order-quantity-input">{{ item.quantity }}</span>
+        <span class="increment" @click="incrementQuan">+</span>
       </div>
     </div>
-    <button><i class="fa fa-trash"></i></button>
+    <button @click="removeItem(item.id)"><i class="fa fa-trash"></i></button>
   </div>
 </template>
 
 <script>
 export default {
   props: ["item"],
+  methods: {
+    decrementQuan() {
+      if (this.item.quantity == 1) {
+        this.$store.dispatch("removeItem", this.item.id);
+      }
+      this.$store.dispatch("decreaseItemQuantity", this.item.id);
+    },
+    incrementQuan() {
+      this.$store.dispatch("increaseItemQuantity", this.item.id);
+    },
+    removeItem(id) {
+      this.$store.dispatch("removeItem", id);
+    },
+  },
 };
 </script>

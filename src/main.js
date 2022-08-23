@@ -26,6 +26,10 @@ Vue.component("base-carousel", BaseCarousel);
 import TheFooter from "./components/layouts/TheFooter.vue";
 Vue.component("the-footer", TheFooter);
 
+//title Header
+import TitleHeader from "./components/ui/TitleHeader.vue";
+Vue.component("title-header", TitleHeader);
+
 // START:: IMPORTING FONT AWESOME
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";

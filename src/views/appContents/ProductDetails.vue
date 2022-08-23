@@ -41,7 +41,7 @@
               <span class="order-quantity-input">{{ quantity }}</span>
               <span class="increment" @click="incrementQuan">+</span>
             </div>
-            <button>أضف إالي السلة</button>
+            <button @click="addToCart">أضف إالي السلة</button>
           </div>
         </div>
         <div class="product-detail-prices">
@@ -85,6 +85,18 @@ export default {
         return;
       }
       this.quantity++;
+    },
+    addToCart() {
+      if (this.quantity == 0) {
+        return;
+      }
+      this.$store.dispatch("addItem", {
+        id: this.id,
+        quan: this.quantity,
+        item: { ...this.product, quantity: this.quantity },
+      });
+      this.$router.push("/");
+      this.$store.dispatch("openCart");
     },
   },
 };
