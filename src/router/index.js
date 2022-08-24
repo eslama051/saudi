@@ -18,6 +18,10 @@ import ProductDetails from "../views/appContents/ProductDetails.vue";
 import SignIn from "../views/auth/SignIn.vue";
 import SignUp from "../views/auth/SignUp.vue";
 import WelcomeAuth from "../views/auth/WelcomeAuth.vue";
+import SignUpVerif from "../views/auth/SignUpVerif.vue";
+import ForgetPass from "../views/auth/ForgetPass.vue";
+import ForgetPassVerif from "../views/auth/ForgetPassVerif.vue";
+import NewPass from "../views/auth/NewPassword.vue";
 
 // not found
 import NotFound from "../pages/NotFound.vue";
@@ -42,6 +46,11 @@ const routes = [
       { path: "", component: WelcomeAuth },
       { path: "login", component: SignIn },
       { path: "signup", component: SignUp },
+      { path: "signup/verif", component: SignUpVerif },
+      { path: "ForgetPass", component: ForgetPass },
+      { path: "Forget/password", component: ForgetPass },
+      { path: "Forget/password/veirf", component: ForgetPassVerif },
+      { path: "newpassword", component: NewPass },
     ],
   },
   { path: "/:notFound(.*)", component: NotFound },

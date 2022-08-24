@@ -86,3 +86,16 @@
     }
   }
 }
+@media screen and (max-width: 766px) {
+  .hero {
+    flex-direction: column-reverse;
+
+    .slider-wrapper {
+      width: 100%;
+      height: auto;
+    }
+    .social-media-wrapper {
+      flex-direction: row;
+    }
+  }
+}

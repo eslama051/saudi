@@ -4,8 +4,8 @@
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
     <form class="signup">
-      <h1>Welcome To Davina</h1>
-      <h1>Create An Account</h1>
+      <h4>Welcome To Davina</h4>
+      <h4>Create An Account</h4>
       <div class="form-signup-control">
         <input type="text" placeholder="First Name" />
         <input type="text" placeholder="Second Name" />
@@ -33,7 +33,7 @@
       </div>
       <input type="password" placeholder="Password" />
       <input type="password" placeholder="Confirm Password" />
-      <button class="main-btn">Sign Up</button>
+      <button class="main-btn" @click="sigingUP">Sign Up</button>
     </form>
     <div class="btns">
       <a class="flow-btn"
@@ -77,6 +77,9 @@ export default {
     selecetCountry(country) {
       this.selecetedCountry = country;
       this.dropdownopened = false;
+    },
+    sigingUP() {
+      this.$router.push("/auth/signup/verif");
     },
   },
   created() {

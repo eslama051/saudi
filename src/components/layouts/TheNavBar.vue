@@ -1,5 +1,5 @@
 <template>
-  <header class="nav-bar-header">
+  <header class="nav-bar-header" id="nav-bar-header">
     <nav>
       <div class="container py-0 my-0">
         <div class="nav-wrapper">
@@ -133,7 +133,15 @@ export default {
           .classList.remove("show-nav-small");
       });
     });
-    console.log(this.$store.getters.itemAmount);
+    document.addEventListener("scroll", () => {
+      let Yposition = window.scrollY;
+      console.log(Yposition);
+      if (Yposition >= 75) {
+        document.getElementById("nav-bar-header").classList.add("nav-fixed");
+      } else {
+        document.getElementById("nav-bar-header").classList.remove("nav-fixed");
+      }
+    });
   },
 };
 </script>

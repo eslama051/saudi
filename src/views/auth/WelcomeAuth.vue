@@ -6,10 +6,10 @@
     <div class="welcome">
       <h1>أهلا بك</h1>
       <p>سجل الان و تمتع بمميزات و تجربة فريدة من نوعها</p>
-      <router-link to="/auth/login" class="main-btn">إنشاء حساب</router-link>
+      <router-link to="/auth/signup" class="main-btn">إنشاء حساب</router-link>
       <p>
         لديك حساب بالفعل؟
-        <router-link class="signup-btn" to="/auth/signup"
+        <router-link class="signup-btn" to="/auth/login"
           >تسجيل الدخول</router-link
         >
       </p>
@@ -20,6 +20,7 @@
 <style lang="scss" scoped>
 .welcome-container {
   text-align: center;
+  z-index: 2;
   img {
     margin-bottom: 1rem;
   }

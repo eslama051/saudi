@@ -3,11 +3,13 @@
     <div class="logo-container">
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
-    <form class="login">
-      <h1>Sign In To Your Account</h1>
+    <form class="login" @submit.stop="signingIn">
+      <h4>Sign In To Your Account</h4>
       <input type="text" placeholder="Email Address Or Mobile Number" />
       <input type="password" placeholder="Password" />
-      <p>Forget Your Password!</p>
+      <router-link to="/auth/forget/password"
+        >Forget Your Password!</router-link
+      >
       <button class="main-btn">Sign In</button>
     </form>
     <div class="btns">
@@ -30,9 +32,20 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    signingIn() {
+      this.$router.push("/");
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .login-container {
   text-align: center;
+  z-index: 2;
   img {
     margin-bottom: 1rem;
   }
@@ -50,8 +63,10 @@
   h1 {
     margin-bottom: 1rem;
   }
-  p {
+  a {
     color: red;
+    display: inline-block;
+    margin-bottom: 1rem;
     cursor: pointer;
     &:hover {
       opacity: 0.6;

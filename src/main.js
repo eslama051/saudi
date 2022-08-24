@@ -26,6 +26,10 @@ Vue.component("base-carousel", BaseCarousel);
 import TheFooter from "./components/layouts/TheFooter.vue";
 Vue.component("the-footer", TheFooter);
 
+//base verif Input
+import BaseVerifInput from "./components/ui/BaseVerifInput.vue";
+Vue.component("base-verif", BaseVerifInput);
+
 //title Header
 import TitleHeader from "./components/ui/TitleHeader.vue";
 Vue.component("title-header", TitleHeader);

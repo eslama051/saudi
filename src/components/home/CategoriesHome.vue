@@ -5,6 +5,7 @@
         v-for="category in categories"
         :key="category.id"
         :category="category"
+        class="grid-ele"
       ></CategoryItem>
     </div>
   </section>

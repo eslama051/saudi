@@ -35,3 +35,11 @@
     }
   }
 }
+@media screen and (max-width: 1200px) {
+  .about-img {
+    display: none;
+  }
+  .about-info {
+    border-radius: 30px;
+  }
+}
