@@ -3,7 +3,7 @@
     <img class="img-1" src="../../assets/images/store2-home-bags.png" alt="" />
     <img class="img-2" src="../../assets/images/store2-home-bags.png" alt="" />
     <h1>{{ title }}</h1>
-    <div>
+    <div v-if="link">
       <router-link to="/">الرئيسية</router-link>
       >
       <router-link :to="link">{{ title }}</router-link>

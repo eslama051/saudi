@@ -103,7 +103,7 @@
 
           font-size: 1.5rem;
           font-weight: bold;
-          column-gap: 5rem;
+          column-gap: 3rem;
           flex-direction: row-reverse;
           margin-top: 5rem;
           // justify-content: space-between;
@@ -141,8 +141,9 @@
             color: #43290a;
           }
           @media screen and (max-width: 992px) {
-            font-size: 1rem;
-            padding: 0.5rem 3rem;
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            width: 150px;
           }
         }
       }

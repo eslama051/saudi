@@ -108,6 +108,9 @@
   .nav-links-small {
     display: none;
   }
+  .nav-btns-small {
+    display: none;
+  }
   @media screen and (max-width: 1000px) {
     .nav-links {
       display: none;
@@ -175,6 +178,47 @@
         &:hover {
           transform: rotate(270deg);
           color: red;
+        }
+      }
+    }
+    .nav-btns-small-show {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      right: 0;
+      left: 0;
+      top: 100vh;
+      transform: translateY(-100%);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      // z-index: 1000;
+      a {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        h5 {
+          font-size: 0.7rem;
+        }
+      }
+      .nav-btn-home {
+        // background: white;
+        // border-radius: 50%;
+        transform: translateY(-50%);
+
+        // padding: 1rem;
+        position: relative;
+        &::before {
+          position: absolute;
+          background-color: white;
+          content: " ";
+          padding: 2rem;
+          z-index: -1;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+          transform: translate(-25%, -25%);
+          box-shadow: 0 0 15px 0 #ddd;
         }
       }
     }

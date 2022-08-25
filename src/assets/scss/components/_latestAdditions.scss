@@ -32,8 +32,10 @@
       align-items: center;
       padding: 0rem;
       font-size: 1.3rem;
+      margin-top: -0.5rem;
       .heart-icon {
         transition: all 0.3s;
+        margin-left: 1rem;
         &:hover {
           color: red;
         }
@@ -41,6 +43,7 @@
       .heart-icon-wished {
         color: red;
         transition: all 0.3s;
+        margin-left: 1rem;
         &:hover {
           color: #43290a;
         }
@@ -125,6 +128,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem 1rem;
+    margin-top: 2rem;
+    @media screen and (max-width: 450px) {
+      grid-template-columns: 1fr;
+      max-width: 250px;
+      margin: 2rem auto;
+    }
   }
   .latest-item {
     text-align: right;

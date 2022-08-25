@@ -4,7 +4,7 @@
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
     <form class="password" @submit.stop="submitting">
-      <h2>{{ title }}</h2>
+      <h3>{{ title }}</h3>
       <h4>
         Please Enter The Code That Sent To Your Email Address Or Mobile Number
       </h4>

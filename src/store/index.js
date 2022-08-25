@@ -12,12 +12,30 @@ export default new Vuex.Store({
   },
   state: {
     isSignedIn: false,
+    isSearchOpened: false,
   },
   getters: {
     isSignedIn(state) {
       return state.isSignedIn;
     },
+    isSearchOpened(state) {
+      return state.isSearchOpened;
+    },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    openSearch(state) {
+      state.isSearchOpened = true;
+    },
+    closeSearch(state) {
+      state.isSearchOpened = false;
+    },
+  },
+  actions: {
+    openSearch(context) {
+      context.commit("openSearch");
+    },
+    closeSearch(context) {
+      context.commit("closeSearch");
+    },
+  },
 });

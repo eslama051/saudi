@@ -9,6 +9,7 @@
       <div class="item-footer">
         <div>
           <font-awesome-icon
+            @click.stop="removeFromWished"
             v-if="item.wished"
             class="heart-icon-wished"
             icon="fa fa-heart"
@@ -44,6 +45,9 @@ export default {
     },
     addToWished() {
       this.$store.dispatch("addToWished", this.item.id);
+    },
+    removeFromWished() {
+      this.$store.dispatch("removeFromWished", this.item.id);
     },
   },
 };

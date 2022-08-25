@@ -1,9 +1,13 @@
 <template>
   <div>
     <the-nav-bar></the-nav-bar>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
     <cart-component />
     <wish-list />
+    <profile-component />
+    <search-box />
     <the-footer></the-footer>
   </div>
 </template>
@@ -13,6 +17,8 @@ import TheFooter from "@/components/layouts/TheFooter.vue";
 import TheNavBar from "../components/layouts/TheNavBar.vue";
 import CartComponent from "../components/cart/CartComponent.vue";
 import WishList from "../components/wishlist/WishList.vue";
+import ProfileComponent from "../components/profile/ProfileComponent.vue";
+import SearchBox from "../components/search/SearchBox.vue";
 export default {
   // importing the navbar
   components: {
@@ -20,6 +26,10 @@ export default {
     TheFooter,
     CartComponent,
     WishList,
+    ProfileComponent,
+    SearchBox,
   },
 };
 </script>
+
+<style lang="scss" scoped></style>
