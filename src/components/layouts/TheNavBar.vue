@@ -48,7 +48,7 @@
               </div>
             </li>
             <li>
-              <div>
+              <div @click="openWish">
                 <img
                   class="nav-icon-img"
                   src="../../assets/images/heart.svg"
@@ -124,6 +124,9 @@ export default {
     cartAmount() {
       return this.$store.getters.itemAmount;
     },
+    openWish() {
+      this.$store.dispatch("openWish");
+    },
   },
   mounted() {
     document.querySelectorAll(".link-small").forEach((link) => {
@@ -135,7 +138,6 @@ export default {
     });
     document.addEventListener("scroll", () => {
       let Yposition = window.scrollY;
-      console.log(Yposition);
       if (Yposition >= 75) {
         document.getElementById("nav-bar-header").classList.add("nav-fixed");
       } else {

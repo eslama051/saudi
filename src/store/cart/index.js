@@ -7,6 +7,7 @@ mutations;
 export default {
   state: {
     cartState: false,
+    wishState: false,
     items: [
       {
         id: "0",

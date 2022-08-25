@@ -11,4 +11,8 @@ export default {
   product: (state) => (id) => {
     return state.mostSelled.find((item) => item.id == id);
   },
+
+  wished(state) {
+    return state.wished;
+  },
 };

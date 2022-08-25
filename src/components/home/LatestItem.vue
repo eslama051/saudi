@@ -4,13 +4,22 @@
       <img :src="item.img" alt="" />
     </div>
     <h2>{{ item.title }}</h2>
-    <h3>{{ item.type }}</h3>
+    <h3 class="right-h3">{{ item.type }}</h3>
     <div class="itemfooter-container">
       <div class="item-footer">
-        <font-awesome-icon
-          class="heart-icon"
-          icon=" fa-heart"
-        ></font-awesome-icon>
+        <div>
+          <font-awesome-icon
+            v-if="item.wished"
+            class="heart-icon-wished"
+            icon="fa fa-heart"
+          ></font-awesome-icon>
+          <font-awesome-icon
+            @click.stop="addToWished"
+            v-else
+            class="heart-icon"
+            icon="fa fa-heart"
+          ></font-awesome-icon>
+        </div>
         <div class="prices">
           <span class="oldPrice">
             <span>{{ item.oldPrice }}</span
@@ -32,6 +41,9 @@ export default {
   methods: {
     openProductDetails(id) {
       this.$router.push(`/product-details/${id}`);
+    },
+    addToWished() {
+      this.$store.dispatch("addToWished", this.item.id);
     },
   },
 };

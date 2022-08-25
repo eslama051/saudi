@@ -40,4 +40,12 @@ export default {
       return item;
     });
   },
+
+  //wish login
+  closeWish(state) {
+    state.wishState = false;
+  },
+  openWish(state) {
+    state.wishState = true;
+  },
 };

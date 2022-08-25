@@ -17,4 +17,12 @@ export default {
   increaseItemQuantity(context, id) {
     context.commit("increaseItemQuantity", id);
   },
+
+  //wishlist logic
+  closeWish(context) {
+    context.commit("closeWish");
+  },
+  openWish(context) {
+    context.commit("openWish");
+  },
 };

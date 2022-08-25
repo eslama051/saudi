@@ -38,6 +38,13 @@
           color: red;
         }
       }
+      .heart-icon-wished {
+        color: red;
+        transition: all 0.3s;
+        &:hover {
+          color: #43290a;
+        }
+      }
       .prices {
         display: flex;
         column-gap: 0.5rem;
@@ -111,4 +118,78 @@
 .carousel-container {
   width: 80%;
   margin: 0rem auto;
+}
+
+.wish-list {
+  .wish-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+  .latest-item {
+    text-align: right;
+    color: #43290a;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+    h3.right-h3 {
+      color: #958a7e;
+      display: block;
+      text-align: right;
+      // background-color: red;
+      font-size: 1rem;
+    }
+    .img-container {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0rem;
+      font-size: 1.3rem;
+      margin-top: -2rem;
+      .heart-icon {
+        transition: all 0.3s;
+        &:hover {
+          color: red;
+        }
+      }
+      .heart-icon-wished {
+        color: red;
+        transition: all 0.3s;
+        &:hover {
+          color: #43290a;
+        }
+      }
+      .prices {
+        display: flex;
+        column-gap: 0.5rem;
+        font-size: 1rem;
+      }
+      .oldPrice,
+      .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+      }
+      .oldPrice {
+        color: #958a7e;
+        // margin: 1rem;
+        text-decoration: line-through;
+      }
+    }
+  }
 }
