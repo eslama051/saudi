@@ -35,6 +35,21 @@
               </span>
             </div>
           </div>
+          <transition name="fade" mode="out-in" v-if="selecetedColor">
+            <div class="product-details-sizes">
+              <h1>الأحجام</h1>
+              <div>
+                <span
+                  v-for="(size, index) in product.sizes"
+                  :key="index"
+                  @click="selecetSize(size)"
+                  :class="size == selecetedSize ? 'seleceted-size' : ''"
+                >
+                  {{ size }}
+                </span>
+              </div>
+            </div>
+          </transition>
           <div class="order-control">
             <div class="order-quantity">
               <span class="decrement" @click="decrementQuan">-</span>
@@ -61,6 +76,7 @@ export default {
     return {
       selecetedColor: "",
       quantity: 0,
+      selecetedSize: "",
     };
   },
   props: ["id"],
@@ -74,6 +90,9 @@ export default {
     selecetColor(color) {
       this.selecetedColor = color;
     },
+    selecetSize(size) {
+      this.selecetedSize = size;
+    },
     decrementQuan() {
       if (this.quantity == 0) {
         return;
@@ -86,17 +105,47 @@ export default {
       }
       this.quantity++;
     },
+    playSound() {
+      new Audio(require("../../assets/audio/mangkeyou_sharingan.mp3")).play();
+    },
     addToCart() {
+      if (this.selecetedColor == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "plase Pick A  Color",
+        });
+        return;
+      }
+      if (this.selecetedSize == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "plase Pick A  Size",
+        });
+        return;
+      }
       if (this.quantity == 0) {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "plase Pick The Mount Desired",
+        });
         return;
       }
       this.$store.dispatch("addItem", {
-        id: this.id,
-        quan: this.quantity,
-        item: { ...this.product, quantity: this.quantity },
+        item: {
+          id: this.id,
+          ...this.product,
+          quantity: this.quantity,
+          color: this.selecetedColor,
+          size: this.selecetedSize,
+        },
       });
-      this.$router.push("/");
-      this.$store.dispatch("openCart");
+      // this.$router.push("/");
+      this.playSound();
+      this.$iziToast.success({
+        title: "Item",
+        message: "Add To The Cart",
+      });
+      // this.$store.dispatch("openCart");
     },
   },
 };

@@ -11,14 +11,15 @@
       <div class="profile-component-header">
         <div class="user-info">
           <div class="user-img-container">
-            <img
-              src="https://yt3.ggpht.com/ytc/AMLnZu-bO90A6zQnn7Q60dFLYHV1ajwkxzEMLlSh70ztng=s900-c-k-c0x00ffffff-no-rj"
-              alt=""
-            />
+            <img src="../../assets/images/unnamed.jpg" alt="img" />
           </div>
           <h2>إسلام أحمد</h2>
         </div>
-        <div class="user-edit-btn"><i class="fa fa-edit"></i></div>
+        <div @click="hideProfile">
+          <router-link to="/account/details" class="user-edit-btn"
+            ><i class="fa fa-edit"></i
+          ></router-link>
+        </div>
       </div>
       <div class="profile-component-body">
         <profile-item icon="box" title="طلباتي" link="/orders" />
@@ -42,6 +43,7 @@ export default {
       document
         .getElementById("profile-component-container")
         .classList.remove("show-profile");
+      document.body.style.overflowY = "auto";
     },
   },
 };

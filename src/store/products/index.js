@@ -60,6 +60,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 20,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -78,6 +79,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 50,
         colors: ["pink", "green"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -92,6 +94,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 15,
         colors: ["red", "yellow"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -106,6 +109,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 33,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -120,6 +124,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 89,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -135,6 +140,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 76,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -151,6 +157,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 20,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -167,6 +174,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 50,
         colors: ["pink", "green"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -181,6 +189,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 15,
         colors: ["red", "yellow"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -195,6 +204,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 33,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -209,6 +219,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 89,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -224,6 +235,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 76,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -240,6 +252,7 @@ export default {
         img: "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
         quantity: 20,
         colors: ["white", "black"],
+        sizes: ["large", "small"],
         imgs: [
           "https://media.istockphoto.com/photos/beautiful-young-woman-eastern-type-fulllength-on-a-light-background-picture-id619727436?k=20&m=619727436&s=612x612&w=0&h=-eVV1bc4bHyx05MMjomB7ZkTp6DJnQntBCiopFOnq4M=",
           "https://images.pexels.com/photos/4626360/pexels-photo-4626360.jpeg?auto=compress&cs=tinysrgb&w=1600",

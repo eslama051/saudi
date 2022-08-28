@@ -7,6 +7,7 @@
   transform: translateX(-100%);
   transition: all 0.5s ease;
   z-index: 1100;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   .profile-component {
     color: #43290a;
     width: 50vw;
@@ -58,8 +59,9 @@
         }
       }
       .user-edit-btn {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         cursor: pointer;
+        color: #43290a;
       }
     }
     .profile-component-body {

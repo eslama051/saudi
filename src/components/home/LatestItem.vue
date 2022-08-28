@@ -45,6 +45,7 @@ export default {
     },
     addToWished() {
       this.$store.dispatch("addToWished", this.item.id);
+      new Audio(require("../../assets/audio/anya.mp3")).play();
     },
     removeFromWished() {
       this.$store.dispatch("removeFromWished", this.item.id);

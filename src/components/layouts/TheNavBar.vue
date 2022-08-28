@@ -154,17 +154,20 @@ export default {
     },
     openCart() {
       this.$store.dispatch("openCart");
+      document.body.style.overflowY = "hidden";
     },
     cartAmount() {
       return this.$store.getters.itemAmount;
     },
     openWish() {
       this.$store.dispatch("openWish");
+      document.body.style.overflowY = "hidden";
     },
     showProfile() {
       document
         .getElementById("profile-component-container")
         .classList.add("show-profile");
+      document.body.style.overflowY = "hidden";
     },
     showSearch() {
       this.$store.dispatch("openSearch");

@@ -31,6 +31,7 @@ export default {
   methods: {
     closeWish() {
       this.$store.dispatch("closeWish");
+      document.body.style.overflowY = "auto";
     },
   },
 };

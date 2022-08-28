@@ -14,6 +14,8 @@ import CompetitionsPage from "../views/appContents/CompetitionsPage.vue";
 import ContactPage from "../views/appContents/ContactPage.vue";
 import ProductDetails from "../views/appContents/ProductDetails.vue";
 import MyOrders from "../views/appContents/MyOrders.vue";
+import AccountDetails from "../views/appContents/AccountDetails.vue";
+
 //Auth veiw
 import SignIn from "../views/auth/SignIn.vue";
 import SignUp from "../views/auth/SignUp.vue";
@@ -38,6 +40,7 @@ const routes = [
       { path: "contact", component: ContactPage },
       { path: "product-details/:id", component: ProductDetails, props: true },
       { path: "orders", component: MyOrders },
+      { path: "account/details", component: AccountDetails },
     ],
   },
   {

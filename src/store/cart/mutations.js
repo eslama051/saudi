@@ -2,11 +2,16 @@ export default {
   addItem(state, payload) {
     let newItem = payload.item;
     state.items = state.items.map((item) => {
-      if (item.id != payload.id) {
+      if (item.id != payload.item.id) {
         return item;
       }
-      item.quantity += payload.quan;
-      newItem = "";
+
+      if (item.color == payload.item.color && item.size == payload.item.size) {
+        item.quantity += payload.item.quantity;
+        console.log(item.quantity);
+        newItem = "";
+        return item;
+      }
       return item;
     });
     if (newItem) {

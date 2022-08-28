@@ -55,6 +55,7 @@ export default {
   methods: {
     closeCart() {
       this.$store.dispatch("closeCart");
+      document.body.style.overflowY = "auto";
     },
   },
 };

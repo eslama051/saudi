@@ -39,6 +39,13 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 // END:: IMPORTING FONT AWESOME
 
+//izitoast
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+// import "izitoast/dist/js/iziToast.min.js";
+Vue.prototype.$iziToast = iziToast;
+Vue.use(iziToast);
+
 //font awesome
 
 import { library } from "@fortawesome/fontawesome-svg-core";
