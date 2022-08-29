@@ -70,11 +70,12 @@
         outline: 2px solid #43290a;
         margin: 1rem 1rem;
         outline-offset: 2px;
+        opacity: 0.6;
       }
       .owl-dot.active span {
         background-color: #43290a;
-        opacity: 0.6;
-        transform: scale(0.8);
+        opacity: 1;
+        transform: scale(1.2);
       }
     }
     .slider-content-wrapper {
