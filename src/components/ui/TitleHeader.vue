@@ -6,7 +6,7 @@
     <div v-if="link">
       <router-link to="/">الرئيسية</router-link>
       >
-      <router-link :to="link">{{ title }}</router-link>
+      <router-link :to="link" class="title-gray">{{ title }}</router-link>
     </div>
   </div>
 </template>
@@ -50,6 +50,9 @@ export default {
   }
   a {
     color: #43290a;
+  }
+  a.title-gray {
+    color: gray;
   }
 }
 </style>

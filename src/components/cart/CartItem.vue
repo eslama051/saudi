@@ -26,13 +26,14 @@ export default {
   props: ["item"],
   methods: {
     decrementQuan() {
-      if (this.item.quantity == 1) {
+      if (this.item.quantity <= 1) {
         this.$store.dispatch("removeItem", this.item.id);
       }
       this.$store.dispatch("decreaseItemQuantity", this.item.id);
     },
     incrementQuan() {
       this.$store.dispatch("increaseItemQuantity", this.item.id);
+      console.log(this.item);
     },
     removeItem(id) {
       this.$store.dispatch("removeItem", id);
