@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import authModule from "./auth/";
 import ProductsModule from "./products/";
 import cartModule from "./cart/";
 
@@ -7,11 +8,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
+    auth: authModule,
     products: ProductsModule,
     cart: cartModule,
   },
   state: {
-    isSignedIn: false,
     isSearchOpened: false,
   },
   getters: {

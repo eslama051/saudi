@@ -5,7 +5,6 @@
     <input name="code" class="code-input" required />
     <input name="code" class="code-input" required />
     <input name="code" class="code-input" required />
-    <input name="code" class="code-input" required />
   </div>
 </template>
 
@@ -13,12 +12,6 @@
 export default {
   methods: {
     // mini example on how to pull the data on submit of the form
-    onSubmit(e) {
-      e.preventDefault();
-      const inputElements = [...document.querySelectorAll("input.code-input")];
-      const code = inputElements.map(({ value }) => value).join("");
-      console.log(code);
-    },
   },
   mounted() {
     const inputElements = [...document.querySelectorAll("input.code-input")];
@@ -81,6 +74,11 @@ export default {
     margin: 0.5rem;
     width: 45px;
     padding: 0.5rem;
+  }
+  @media screen and (max-width: 500px) {
+    margin: 0.2rem;
+    width: 30px;
+    padding: 0.3rem;
   }
 }
 </style>

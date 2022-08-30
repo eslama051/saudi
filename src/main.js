@@ -46,6 +46,10 @@ import "izitoast/dist/css/iziToast.min.css";
 Vue.prototype.$iziToast = iziToast;
 Vue.use(iziToast);
 
+//AXIOS
+import Axios from "axios";
+Vue.prototype.$axios = Axios;
+
 //font awesome
 
 import { library } from "@fortawesome/fontawesome-svg-core";

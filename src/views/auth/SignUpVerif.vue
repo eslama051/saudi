@@ -11,8 +11,22 @@ import VerifInputContainer from "@/components/auth/VerifInputContainer.vue";
 export default {
   components: { VerifInputContainer },
   methods: {
-    submitting() {
+    async submitting(code) {
+      try {
+        await this.$store.dispatch("checkCode", { code: code });
+      } catch (error) {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: error.message,
+        });
+        return;
+      }
+      this.$iziToast.success({
+        // title: "Error: ",
+        message: "تم تأكيد حسابك",
+      });
       this.$router.push("/");
+      // this.$router.push("/");
     },
   },
 };

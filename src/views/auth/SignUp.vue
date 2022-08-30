@@ -3,18 +3,18 @@
     <div class="logo-container">
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
-    <form class="signup">
+    <form class="signup" @submit.prevent="siginingUP">
       <h4>Welcome To Davina</h4>
       <h4>Create An Account</h4>
       <div class="form-signup-control">
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Second Name" />
+        <input type="text" placeholder="First Name" v-model="firstName" />
+        <input type="text" placeholder="Second Name" v-model="secondName" />
       </div>
-      <input type="email" placeholder="Email Address" />
+      <input type="email" placeholder="Email Address" v-model="email" />
       <div class="form-signup-control">
-        <div class="flag-dropdown">
+        <div class="flag-dropdown" v-if="countries">
           <div class="flag-input flag-btn" @click="toggleDropdown">
-            <img :src="getUrl(selecetedCountry.flag)" alt="smth" />+{{
+            <img :src="selecetedCountry.flag" alt="smth" />+{{
               selecetedCountry.key
             }}
           </div>
@@ -25,15 +25,24 @@
               :class="country == selecetedCountry ? 'showNot' : 'flag-input'"
               @click="selecetCountry(country)"
             >
-              <img :src="getUrl(country.flag)" alt="smth" />+{{ country.key }}
+              <img :src="country.flag" alt="smth" />+{{ country.key }}
             </div>
           </div>
         </div>
-        <input type="text" placeholder="Phone Number" class="phone-input" />
+        <input
+          type="text"
+          placeholder="Phone Number"
+          class="phone-input"
+          v-model="phoneNumber"
+        />
       </div>
-      <input type="password" placeholder="Password" />
-      <input type="password" placeholder="Confirm Password" />
-      <button class="main-btn" @click="sigingUP">Sign Up</button>
+      <input type="password" placeholder="Password" v-model="password" />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        v-model="confirmPassword"
+      />
+      <button class="main-btn">Sign Up</button>
     </form>
     <div class="btns">
       <a class="flow-btn"
@@ -56,21 +65,25 @@
 </template>
 
 <script>
+// import axios from "axios";
 export default {
   data() {
     return {
       dropdownopened: false,
-      countries: [
-        { flag: "egypt.png", key: +20 },
-        { flag: "egypt.png", key: +966 },
-      ],
+      firstName: "",
+      secondName: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
+      confirmPassword: "",
+      countries: null,
       selecetedCountry: null,
     };
   },
   methods: {
-    getUrl(path) {
-      return require(`../../assets/images/auth/${path}`);
-    },
+    // getUrl(path) {
+    //   return require(`../../assets/images/auth/${path}`);
+    // },
     toggleDropdown() {
       this.dropdownopened = !this.dropdownopened;
     },
@@ -78,12 +91,88 @@ export default {
       this.selecetedCountry = country;
       this.dropdownopened = false;
     },
-    sigingUP() {
+    async siginingUP() {
+      let bodyFormData = new FormData();
+      if (this.firstName == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "First Name can not be empty ",
+        });
+        return;
+      }
+
+      if (this.secondName == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "second Name can not be empty ",
+        });
+        return;
+      }
+      bodyFormData.append("user_name", `${this.firstName} ${this.secondName}`);
+
+      if (this.email == "" || !this.email.includes("@")) {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "email is empty or invalid ",
+        });
+        return;
+      }
+      bodyFormData.append("email", this.email);
+
+      if (this.phoneNumber == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "Phone Number is empty or invalid ",
+        });
+        return;
+      }
+      bodyFormData.append(
+        "phone",
+        `${this.selecetedCountry.key}${this.phoneNumber}`
+      );
+      console.log(`${this.selecetedCountry.key}${this.phoneNumber}`);
+
+      if (this.password == "") {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "Password is empty  ",
+        });
+        return;
+      }
+      bodyFormData.append("password", this.password);
+      if (this.confirmPassword == "" || this.confirmPassword != this.password) {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: "كلمه السر غير متوافقه ",
+        });
+        return;
+      }
+      bodyFormData.append("password_confirmation", this.confirmPassword);
+
+      try {
+        await this.$store.dispatch("signin", bodyFormData);
+      } catch (error) {
+        this.$iziToast.error({
+          title: "Error: ",
+          message: error.message,
+        });
+        return;
+      }
+      this.$iziToast.success({
+        // title: "Error: ",
+        message: "تم التسجيل بنجاح  رجاء تفعيل حسابك",
+      });
       this.$router.push("/auth/signup/verif");
     },
   },
   created() {
-    this.selecetedCountry = this.countries[0];
+    this.$axios
+      .get("https://khlod.aait-d.com/saudi_marsheeh/public/api/countries")
+      .then((reponse) => {
+        // console.log(reponse.data.data);
+        this.countries = reponse.data.data;
+        this.selecetedCountry = this.countries[0];
+      });
   },
 };
 </script>
@@ -129,7 +218,7 @@ export default {
       position: absolute;
     }
     .flag-input {
-      min-width: 120px;
+      width: 130px;
       cursor: pointer;
       padding: 0.6rem;
       border-radius: 10px;

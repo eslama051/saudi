@@ -3,7 +3,7 @@
     <div class="logo-container">
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
-    <form class="password" @submit.stop="submitting">
+    <form class="password" @submit.prevent="submitting">
       <h3>{{ title }}</h3>
       <h4>
         Please Enter The Code That Sent To Your Email Address Or Mobile Number
@@ -23,7 +23,9 @@ export default {
   emits: ["submit-verif"],
   methods: {
     submitting() {
-      this.$emit("submit-verif");
+      const inputElements = [...document.querySelectorAll("input.code-input")];
+      const code = inputElements.map(({ value }) => value).join("");
+      this.$emit("submit-verif", code);
     },
   },
 };
