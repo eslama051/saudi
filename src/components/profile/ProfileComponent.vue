@@ -11,7 +11,7 @@
       <div class="profile-component-header">
         <div class="user-info">
           <div class="user-img-container">
-            <img src="../../assets/images/unnamed.jpg" alt="img" />
+            <img :src="userAvatar" alt="img" />
           </div>
           <h2>إسلام أحمد</h2>
         </div>
@@ -27,6 +27,11 @@
         <profile-item icon="location-dot" title="العناوين" link="/" />
         <profile-item icon="circle-question" title="الأسئلة الشائعة" link="/" />
         <profile-item icon="note-sticky" title="سياية خصوصيه" link="/" />
+        <profile-item
+          icon="arrow-right-from-bracket"
+          title="تسجيل الخروج "
+          @clicked-item="signOut"
+        />
       </div>
     </div>
   </div>
@@ -38,12 +43,21 @@ export default {
   components: {
     ProfileItem,
   },
+  computed: {
+    userAvatar() {
+      return this.$store.getters.userAvatar;
+    },
+  },
   methods: {
     hideProfile() {
       document
         .getElementById("profile-component-container")
         .classList.remove("show-profile");
       document.body.style.overflowY = "auto";
+    },
+    signOut() {
+      console.log("smth");
+      this.$store.dispatch("signOut");
     },
   },
 };

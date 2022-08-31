@@ -36,18 +36,20 @@
             </li>
           </ul>
           <ul class="nav-btns">
-            <li><router-link to="/auth">سجل الان</router-link></li>
-            <li @click="showSearch">
+            <li v-if="!token">
+              <router-link to="/auth">سجل الان</router-link>
+            </li>
+            <li @click="showSearch" v-if="token">
               <div><font-awesome-icon icon="fa-search" /></div>
             </li>
-            <li>
+            <li v-if="token">
               <div @click="openCart" class="cart">
                 <font-awesome-icon icon="fa-shopping-cart" /><span>{{
                   cartAmount()
                 }}</span>
               </div>
             </li>
-            <li>
+            <li v-if="token">
               <div @click="openWish">
                 <!-- <img
                   class="nav-icon-img"
@@ -57,7 +59,7 @@
                 <i class="fa fa-heart"></i>
               </div>
             </li>
-            <li>
+            <li v-if="token">
               <div @click="showProfile">
                 <!-- <img
                   class="nav-icon-img"
@@ -143,6 +145,11 @@
 
 <script>
 export default {
+  computed: {
+    token() {
+      return this.$store.getters.token;
+    },
+  },
   methods: {
     toggleNav() {
       document

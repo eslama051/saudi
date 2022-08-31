@@ -16,7 +16,7 @@ export default {
         await this.$store.dispatch("checkCode", { code: code });
       } catch (error) {
         this.$iziToast.error({
-          title: "Error: ",
+          // title: "Error: ",
           message: error.message,
         });
         return;
@@ -25,8 +25,7 @@ export default {
         // title: "Error: ",
         message: "تم تأكيد حسابك",
       });
-      this.$router.push("/");
-      // this.$router.push("/");
+      this.$router.push("/auth/login");
     },
   },
 };

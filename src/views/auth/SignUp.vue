@@ -130,7 +130,6 @@ export default {
         "phone",
         `${this.selecetedCountry.key}${this.phoneNumber}`
       );
-      console.log(`${this.selecetedCountry.key}${this.phoneNumber}`);
 
       if (this.password == "") {
         this.$iziToast.error({
@@ -150,7 +149,7 @@ export default {
       bodyFormData.append("password_confirmation", this.confirmPassword);
 
       try {
-        await this.$store.dispatch("signin", bodyFormData);
+        await this.$store.dispatch("signup", bodyFormData);
       } catch (error) {
         this.$iziToast.error({
           title: "Error: ",

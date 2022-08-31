@@ -3,10 +3,14 @@
     <div class="logo-container">
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
-    <form class="login" @submit.stop="signingIn">
+    <form class="login" @submit.prevent="signingIn">
       <h4>Sign In To Your Account</h4>
-      <input type="text" placeholder="Email Address Or Mobile Number" />
-      <input type="password" placeholder="Password" />
+      <input
+        type="text"
+        placeholder="Email Address Or Mobile Number"
+        v-model.trim="phone"
+      />
+      <input type="password" placeholder="Password" v-model="password" />
       <router-link to="/auth/forget/password"
         >Forget Your Password!</router-link
       >
@@ -34,8 +38,42 @@
 
 <script>
 export default {
+  data() {
+    return {
+      phone: "",
+      password: "",
+    };
+  },
   methods: {
-    signingIn() {
+    async signingIn() {
+      if (this.phone == "") {
+        this.$iziToast.error({
+          message: "بالرجاء ادخال رقم الهاتف",
+        });
+        return;
+      }
+      if (this.password == "") {
+        this.$iziToast.error({
+          message: "كلمه السر غير صحيحه",
+        });
+        return;
+      }
+      const formData = new FormData();
+      formData.append("phone", this.phone);
+      formData.append("password", this.password);
+      formData.append("device_token", "token");
+      formData.append("type", "ios");
+      try {
+        await this.$store.dispatch("signin", formData);
+      } catch (error) {
+        this.$iziToast.error({
+          message: error.message,
+        });
+        return;
+      }
+      this.$iziToast.success({
+        message: "تم الدخول",
+      });
       this.$router.push("/");
     },
   },

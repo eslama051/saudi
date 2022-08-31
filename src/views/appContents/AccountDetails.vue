@@ -5,11 +5,7 @@ div
     <form action="" @submit.stop>
       <h2 class="account-detail-title">تعديل الحساب</h2>
       <div class="img-edit">
-        <img
-          src="../../assets/images/unnamed.jpg"
-          id="account-detail-img-output"
-          alt=""
-        />
+        <img :src="userAvatar" id="account-detail-img-output" alt="" />
         <label for="file" class="img-input"><i class="fa fa-edit"></i></label>
         <input
           type="file"
@@ -20,16 +16,28 @@ div
           style="display: none"
         />
       </div>
-      <input type="text" placeholder="الإسم " />
-      <input type="text" placeholder="إسم المستخدم" />
-      <input type="text" placeholder="البريد الإلكتروني" />
-      <input type="text" placeholder="رقم الجوال" />
+      <input type="text" placeholder="الإسم " v-model="name" />
+      <input type="text" placeholder="إسم المستخدم" v-model="userName" />
+      <input type="text" placeholder="البريد الإلكتروني" v-model="userEmail" />
+      <input type="text" placeholder="رقم الجوال" v-model="userPhone" />
 
-      <h2 class="account-detail-title">تعديل كلمه المرور</h2>
-
-      <input type="text" placeholder="كلمة المرور الحليه" />
-      <input type="text" placeholder="كلمة المرور الجديدة" />
-      <input type="text" placeholder="تأكيد كلمه المرور الجديدة" />
+      <h2 class="account-detail-title account-detail-title-password">
+        تعديل كلمه المرور
+        <div
+          class="password-btn-container"
+          id="password-btn-container"
+          @click="togglePassword"
+        >
+          <div class="password-btn"></div>
+        </div>
+      </h2>
+      <transition name="fade">
+        <div class="password-inputs-container" v-if="passwordChanging">
+          <input type="text" placeholder="كلمة المرور الحاليه" />
+          <input type="text" placeholder="كلمة المرور الجديدة" />
+          <input type="text" placeholder="تأكيد كلمه المرور الجديدة" />
+        </div>
+      </transition>
       <button class="main-btn">حفظ</button>
     </form>
   </div>
@@ -37,12 +45,43 @@ div
 
 <script>
 export default {
+  data() {
+    return {
+      img: "",
+      name: "",
+      userName: "",
+      userEmail: "",
+      userPhone: "",
+      passwordChanging: false,
+    };
+  },
+  computed: {
+    userData() {
+      return this.$store.getters.userData;
+    },
+    userAvatar() {
+      return this.$store.getters.userAvatar;
+    },
+  },
   methods: {
     loadFile(event) {
-      console.log("smth");
       let image = document.getElementById("account-detail-img-output");
       image.src = URL.createObjectURL(event.target.files[0]);
+      this.img = URL.createObjectURL(event.target.files[0]);
     },
+    togglePassword() {
+      this.passwordChanging = !this.passwordChanging;
+      document
+        .getElementById("password-btn-container")
+        .classList.toggle("active");
+    },
+  },
+  async mounted() {
+    await this.$store.dispatch("getProfile");
+    const data = this.$store.getters.userData;
+    this.userEmail = data.data.email;
+    this.userName = data.data.user_name;
+    this.userPhone = data.data.phone;
   },
 };
 </script>
@@ -63,8 +102,54 @@ form {
   .account-detail-title {
     margin: 2rem;
     color: #43290a;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
 
+    .password-btn-container {
+      width: 40px;
+      height: 15px;
+      background: rgb(160, 157, 157);
+      border-radius: 10px;
+      display: flex;
+      &:hover .password-btn {
+        box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.75);
+      }
+      .password-btn {
+        background: white;
+        display: inline-block;
+        width: 40%;
+        height: 100%;
+        border-radius: 50%;
+        transform: scale(1.4);
+        // justify-self: ;
+        transition: all 1s;
+        // margin-left: auto;
+        box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+    .password-btn-container.active {
+      background: gray;
+      .password-btn {
+        margin-left: auto;
+        background: black;
+        // opacity: 0.6;
+      }
+    }
+  }
+  .password-inputs-container {
+    // background: #dddddd;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    input {
+      width: 100%;
+    }
+  }
   .img-edit {
     width: 200px;
     height: 200px;
