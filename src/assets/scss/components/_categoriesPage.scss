@@ -1,0 +1,39 @@
+.categories-page {
+  background-color: #fbf9f4;
+  .categories-page-container {
+    padding: 3rem 0rem;
+    .filter_content_btns_wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: 0.5rem;
+      flex-wrap: wrap;
+      button {
+        background: linear-gradient(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04));
+        border: none;
+        padding: 0.3rem 0.5rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+
+        &.active_btn,
+        &:hover {
+          background: #43290a;
+          color: white;
+        }
+      }
+    }
+    .categories_page_products {
+      padding: 2rem 0rem;
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: 1rem;
+    }
+    .categories_page_no_products {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 300px;
+    }
+  }
+}

@@ -2,7 +2,7 @@
   <section>
     <div class="section-container container categories-container">
       <CategoryItem
-        v-for="category in categories"
+        v-for="category in main_category"
         :key="category.id"
         :category="category"
         class="grid-ele"
@@ -13,13 +13,14 @@
 <script>
 import CategoryItem from "./CategoryItem.vue";
 export default {
+  props: ["main_category"],
   components: {
     CategoryItem,
   },
-  computed: {
-    categories() {
-      return this.$store.getters.categories;
-    },
-  },
+  // computed: {
+  //   categories() {
+  //     return this.$store.getters.categories;
+  //   },
+  // },
 };
 </script>

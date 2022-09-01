@@ -28,6 +28,10 @@
     }
     .about-img {
       transform: translateX(1rem);
+      overflow: hidden;
+      border-radius: 20px;
+      // height: 500px;
+      width: 400px;
       img {
         display: block;
         width: 100%;
@@ -35,7 +39,7 @@
     }
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .about-img {
     display: none;
   }

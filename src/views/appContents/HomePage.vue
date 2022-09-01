@@ -1,14 +1,19 @@
 <template>
-  <div v-if="data.length == 0">
+  <div v-if="homeData.length == 0">
     <landing-page />
   </div>
   <div class="home-page" v-else>
-    <slider-container></slider-container>
-    <about-container></about-container>
-    <categories-home></categories-home>
-    <latest-additions></latest-additions>
+    <slider-container :sliderData="homeData.slider_header"></slider-container>
+    <about-container
+      :about_image="homeData.about_image"
+      :about="homeData.about"
+    ></about-container>
+    <categories-home :main_category="homeData.main_category"></categories-home>
+    <latest-additions
+      :newer_product_additions="homeData.newer_product_additions"
+    ></latest-additions>
     <adver-banner />
-    <most-selled></most-selled>
+    <most-selled :best_seller="homeData.best_seller"></most-selled>
   </div>
 </template>
 <script>
@@ -24,9 +29,10 @@ import server from "../../apis/server";
 export default {
   data() {
     return {
-      data: [],
+      homeData: [],
     };
   },
+
   components: {
     SliderContainer,
     AboutContainer,
@@ -37,10 +43,18 @@ export default {
     LandingPage,
   },
   created() {
-    server.get("client/home").then((res) => {
-      this.data = res.data.data;
-      console.log(this.data);
-    });
+    server
+      .get("client/home", {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        this.homeData = res.data.data;
+        console.log(this.homeData);
+      });
   },
 };
 </script>

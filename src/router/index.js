@@ -15,6 +15,7 @@ import ContactPage from "../views/appContents/ContactPage.vue";
 import ProductDetails from "../views/appContents/ProductDetails.vue";
 import MyOrders from "../views/appContents/MyOrders.vue";
 import AccountDetails from "../views/appContents/AccountDetails.vue";
+import CategoriesPage from "../views/appContents/CategoriesPage.vue";
 
 //Auth veiw
 import SignIn from "../views/auth/SignIn.vue";
@@ -41,6 +42,7 @@ const routes = [
       { path: "product-details/:id", component: ProductDetails, props: true },
       { path: "orders", component: MyOrders },
       { path: "account/details", component: AccountDetails },
+      { path: "categories/:id", component: CategoriesPage, props: true },
     ],
   },
   {

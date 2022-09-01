@@ -3,24 +3,18 @@
     <div class="container about-container">
       <div class="about-info">
         <h1>معلومات عنا</h1>
-        <p>
-          لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور
-          طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير
-          على سبيل المثال <br />... او نماذج مواقع انترنت ... وعند موافقه العميل
-          المبدئيه على التصميم يتم ازالة هذا النص من التصميم ويتم وضع النصوص
-          النهائية المطلوبة للتصميم ويقول البعض ان وضع النصوص التجريبية بالتصميم
-          قد تشغل المشاهد عن وضع الكثير من الملاحظات او الانتقادات للتصميم
-          الاساسي.
-        </p>
+        <d v-html="about"> </d>
         <base-button title="اقرا المزيد" :link="true" to="/about" />
       </div>
       <div class="about-img">
-        <img src="../../assets/images/home/about.png" alt="" />
+        <img :src="about_image" alt="" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["about_image", "about"],
+};
 </script>

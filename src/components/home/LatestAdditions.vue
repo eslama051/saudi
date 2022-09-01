@@ -16,7 +16,7 @@
           class="latest-additions-items"
         >
           <latest-item
-            v-for="item in latest"
+            v-for="item in newer_product_additions"
             :key="item.id"
             :item="item"
           ></latest-item>
@@ -29,13 +29,17 @@
 <script>
 import LatestItem from "./LatestItem.vue";
 export default {
+  props: ["newer_product_additions"],
   components: {
     LatestItem,
   },
-  computed: {
-    latest() {
-      return this.$store.getters.latest;
-    },
+  // computed: {
+  //   latest() {
+  //     return this.$store.getters.latest;
+  //   },
+  // },
+  created() {
+    // console.log(this.newer_product_additions);
   },
 };
 </script>

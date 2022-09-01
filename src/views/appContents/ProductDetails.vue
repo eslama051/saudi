@@ -1,15 +1,15 @@
 <template>
   <div class="product-detail-page">
-    <div class="product-detail container">
+    <div class="product-detail container" v-if="product">
       <!-- <div class="product-detail-img-container">
         <img :src="product.img" alt="" />
       </div> -->
-      <slick-carousel :imgs="product.imgs" class="slick" />
+      <slick-carousel :imgs="[product.image]" class="slick" />
       <div class="product-detail-info-container">
         <div class="product-detail-info">
-          <h1>{{ product.title }}</h1>
-          <h2>{{ product.type }}</h2>
-          <h3>{{ product.title }}</h3>
+          <h1>{{ product.name }}</h1>
+          <h2>الازياء والملابس</h2>
+          <h3>{{ product.desc }}</h3>
           <div class="product-detail-info-flex">
             <h2>
               <span style="color: black; padding: 10px">{{ product.id }}</span
@@ -26,11 +26,11 @@
             <h1>الألوان</h1>
             <div>
               <span
-                v-for="(color, index) in product.colors"
+                v-for="(item, index) in product.colors"
                 :key="index"
-                :style="{ background: color }"
-                @click="selecetColor(color)"
-                :class="color == selecetedColor ? 'seleceted-color' : ''"
+                :style="{ background: item.color.hex_value }"
+                @click="selecetColor(item)"
+                :class="item.id == selecetedColor.id ? 'seleceted-color' : ''"
               >
               </span>
             </div>
@@ -40,12 +40,12 @@
               <h1>الأحجام</h1>
               <div>
                 <span
-                  v-for="(size, index) in product.sizes"
+                  v-for="(size, index) in sizes"
                   :key="index"
                   @click="selecetSize(size)"
-                  :class="size == selecetedSize ? 'seleceted-size' : ''"
+                  :class="size.id == selecetedSize.id ? 'seleceted-size' : ''"
                 >
-                  {{ size }}
+                  {{ size.name }}
                 </span>
               </div>
             </div>
@@ -60,9 +60,9 @@
           </div>
         </div>
         <div class="product-detail-prices">
-          <h2><span>ر.س</span>{{ product.price }}</h2>
+          <h2><span>ر.س</span>{{ product.price_after_dicount }}</h2>
           <h2 style="text-decoration: line-through; color: gray">
-            <span>ر.س</span>{{ product.oldPrice }}
+            <span>ر.س</span>{{ product.price_before_dicount }}
           </h2>
         </div>
       </div>
@@ -70,25 +70,29 @@
   </div>
 </template>
 <script>
+import server from "@/apis/server";
 import SlickCarousel from "../../components/ui/SlickCarousel.vue";
 export default {
   data() {
     return {
+      product: "",
       selecetedColor: "",
       quantity: 0,
       selecetedSize: "",
+      sizes: "",
     };
   },
   props: ["id"],
   components: { SlickCarousel },
-  computed: {
-    product() {
-      return this.$store.getters.product(this.id);
-    },
-  },
+  // computed: {
+  //   product() {
+  //     return this.$store.getters.product(this.id);
+  //   },
+  // },
   methods: {
-    selecetColor(color) {
-      this.selecetedColor = color;
+    selecetColor(item) {
+      this.selecetedColor = item;
+      this.sizes = item.sizes;
     },
     selecetSize(size) {
       this.selecetedSize = size;
@@ -147,6 +151,20 @@ export default {
       });
       // this.$store.dispatch("openCart");
     },
+  },
+  created() {
+    server
+      .get(`client/show_product/${this.id}`, {
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        console.log(res.data.data);
+        this.product = res.data.data;
+      });
   },
 };
 </script>

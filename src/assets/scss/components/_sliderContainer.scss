@@ -64,18 +64,37 @@
       display: flex;
       flex-direction: column;
       // row-gap: 0.5rem;
-      .owl-dot span {
-        background-color: #43290a;
-        padding: 5px;
-        outline: 2px solid #43290a;
-        margin: 1rem 1rem;
-        outline-offset: 2px;
+      .owl-dot {
+        position: relative;
+
         opacity: 0.6;
+        span {
+          background-color: #43290a;
+          padding: 5px;
+          outline: 2px solid #43290a;
+          margin: 1rem 1rem;
+          outline-offset: 2px;
+        }
+        &:before {
+          content: "0" counter(slider);
+          counter-increment: slider;
+          position: absolute;
+          left: -30%;
+          top: 50%;
+          transform: translateY(-50%);
+          color: var(--main_theme_clr);
+          font-size: 18px;
+          font-family: Cairo-Bold;
+          font-weight: bold;
+        }
       }
-      .owl-dot.active span {
-        background-color: #43290a;
+      .owl-dot.active {
+        color: #43290a;
         opacity: 1;
         transform: scale(1.2);
+        span {
+          background-color: #43290a;
+        }
       }
     }
     .slider-content-wrapper {

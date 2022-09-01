@@ -1,10 +1,10 @@
 <template>
   <div class="latest-item" @click="openProductDetails(item.id)">
     <div class="img-container">
-      <img :src="item.img" alt="" />
+      <img :src="item.product_image[0].url" alt="" />
     </div>
-    <h2>{{ item.title }}</h2>
-    <h3 class="right-h3">{{ item.type }}</h3>
+    <h2>{{ item.name }}</h2>
+    <h3 class="right-h3">الازياء والملابس</h3>
     <div class="itemfooter-container">
       <div class="item-footer">
         <div>
@@ -22,12 +22,12 @@
           ></font-awesome-icon>
         </div>
         <div class="prices">
-          <span class="oldPrice">
-            <span>{{ item.oldPrice }}</span
+          <!-- <span class="oldPrice">
+            <span>{{ item.price_before_dicount }}</span
             ><span>ر.س </span></span
-          >
+          > -->
           <span class="price">
-            <span>{{ item.price }}</span
+            <span>{{ item.price_before_dicount }}</span
             ><span>ر.س </span>
           </span>
         </div>

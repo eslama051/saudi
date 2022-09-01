@@ -1,9 +1,9 @@
 <template>
   <div class="category">
-    <div class="category-container">
-      <img :src="category.img" alt="" />
-      <h1>{{ category.type }}</h1>
-    </div>
+    <router-link :to="`/categories/${category.id}`" class="category-container">
+      <img :src="category.category_image" alt="" />
+      <h1>{{ category.name }}</h1>
+    </router-link>
   </div>
 </template>
 

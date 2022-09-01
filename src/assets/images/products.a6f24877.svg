@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="167" height="101.75" viewBox="0 0 167 101.75">
+  <g id="products" transform="translate(-35 -35)">
+    <path id="Background" d="M46,70a7,7,0,0,1,0-14H7A7,7,0,1,1,7,42H47a7,7,0,0,0,0-14H22a7,7,0,0,1,0-14H62A7,7,0,0,1,62,0h98a7,7,0,1,1,0,14H120a7,7,0,1,1,0,14h22a7,7,0,0,1,0,14H131.826C126.951,42,123,45.134,123,49s6,7,6,7a7,7,0,0,1,0,14ZM153,35a7,7,0,1,1,7,7A7,7,0,0,1,153,35Z" transform="translate(35 63)" fill="#d2c6b8"/>
+    <path id="line" d="M1,24.181Zm0-24Z" transform="translate(140 85)" fill="none" stroke="#84715b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="ground_line" d="M114.128.5ZM87,.5ZM13,.5ZM.128.5Z" transform="translate(67 135)" fill="none" stroke="#43290a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <g id="Iconly_Two-tone_Bag" data-name="Iconly/Two-tone/Bag" transform="translate(83.5 43.478)">
+      <g id="Bag" transform="translate(3.301 2.278)">
+        <path id="Path_33955" d="M58.638,65.157H21.591c-13.6,0-24.049-4.917-21.084-24.7L3.959,13.651C5.77,3.777,12.085,0,17.61,0H62.779C68.384,0,74.317,4.061,76.43,13.651L79.882,40.46C82.4,58.008,72.245,65.157,58.638,65.157Z" transform="translate(0 20.148)" fill="#fff" stroke="#43290a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+        <path id="Line_192" d="M.639.458h-.2" transform="translate(52.598 38.702)" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+        <path id="Line_193" d="M.639.458h-.2" transform="translate(26.721 38.702)" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+        <g id="Call_Silent" data-name="Call Silent" transform="translate(13.699 -40.278)">
+          <path id="Stroke_5" data-name="Stroke 5" d="M0,72.57,72.57,0" transform="translate(-12.855 56.285)" fill="#fff" stroke="#43290a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+    <circle id="Oval" cx="3" cy="3" r="3" transform="translate(155 36)" fill="none" stroke="#84715b" stroke-miterlimit="10" stroke-width="2"/>
+    <circle id="Oval-2" data-name="Oval" cx="3" cy="3" r="3" transform="translate(186 52)" fill="#84715b"/>
+    <path id="Line_5" data-name="Line 5" d="M4.6,4.6.481,8.712,4.6,4.6.354.354,4.6,4.6,8.839.354,4.6,4.6,8.712,8.712Z" transform="translate(165.404 49.404)" fill="none" stroke="#84715b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <path id="Line_4" data-name="Line 4" d="M3,3,0,6,3,3,0,0,3,3,6,0,3,3,6,6Z" transform="translate(71.404 67.596)" fill="none" stroke="#84715b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"/>
+    <circle id="Oval-3" data-name="Oval" cx="3" cy="3" r="3" transform="translate(82 55)" fill="#84715b"/>
+  </g>
+</svg>

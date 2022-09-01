@@ -18,7 +18,8 @@
       ></latest-item>
     </owl-carousel>
   </div>
-  <div v-else>
+  <div v-else style="height: 300px; margin: auto" class="no-thing-to-show">
+    <img src="../../assets/images/products.a6f24877.svg" alt="" />
     <h1>لايوجد منتجات للحين</h1>
   </div>
 </template>
@@ -36,3 +37,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.no-thing-to-show {
+  h1 {
+    font-size: 1.5rem;
+    color: #43290a;
+  }
+}
+</style>
