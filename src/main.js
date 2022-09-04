@@ -50,6 +50,10 @@ Vue.use(iziToast);
 import Axios from "axios";
 Vue.prototype.$axios = Axios;
 
+//login model
+import LoginModel from "./components/auth/LoginModel.vue";
+Vue.component("login-model", LoginModel);
+
 //font awesome
 
 import { library } from "@fortawesome/fontawesome-svg-core";

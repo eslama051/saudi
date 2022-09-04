@@ -21,7 +21,7 @@
           {{ sub_category.name }}
         </button>
       </div>
-      <transition name="fade" mode="out-in">
+      <Transition name="slide" mode="out-in">
         <div class="categories_page_products" v-if="products.length > 0">
           <latest-item
             v-for="product in products"
@@ -33,7 +33,7 @@
           <img src="../../assets/images/products.a6f24877.svg" alt="" />
           <h1>لايوجد منتجات للحين</h1>
         </div>
-      </transition>
+      </Transition>
     </div>
   </section>
 </template>
@@ -93,3 +93,13 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 2s;
+}
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+}
+</style>

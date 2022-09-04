@@ -44,9 +44,7 @@
             </li>
             <li v-if="token">
               <div @click="openCart" class="cart">
-                <font-awesome-icon icon="fa-shopping-cart" /><span>{{
-                  cartAmount()
-                }}</span>
+                <font-awesome-icon icon="fa-shopping-cart" /><span></span>
               </div>
             </li>
             <li v-if="token">
@@ -149,6 +147,9 @@ export default {
     token() {
       return this.$store.getters.token;
     },
+    cartQuantity() {
+      return this.$store.getters.cartQuantity;
+    },
   },
   methods: {
     toggleNav() {
@@ -163,9 +164,7 @@ export default {
       this.$store.dispatch("openCart");
       document.body.style.overflowY = "hidden";
     },
-    cartAmount() {
-      return this.$store.getters.itemAmount;
-    },
+
     openWish() {
       this.$store.dispatch("openWish");
       document.body.style.overflowY = "hidden";

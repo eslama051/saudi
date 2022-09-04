@@ -9,26 +9,34 @@
       </button>
       <h1>السله</h1>
       <h3>
-        <span>{{ cartAmount }} </span> عناصر في السله
+        <span>{{ cartQuantity }} </span> عناصر في السله
       </h3>
-      <div class="cart-items-container">
-        <cart-item v-for="item in items" :key="item.id" :item="item" />
+      <div class="cart-items-container" v-if="cart.data.items.length > 0">
+        <cart-item
+          v-for="item in cart.data.items"
+          :key="item.cart_item_id"
+          :item="item"
+        />
       </div>
       <div class="cart-footer">
         <div class="coupon-container">
           <input type="text" placeholder="أدخل كوبون الخصم" />
         </div>
         <div class="cart-last-control">
-          <h3>سعر المنتج</h3>
-          <h3>22</h3>
+          <h3>سعر المنتجات</h3>
+          <h3>{{ cart.total_products_price }}</h3>
         </div>
         <div class="cart-last-control">
-          <h3>سعر المنتج</h3>
-          <h3>22</h3>
+          <h3>الخصم</h3>
+          <h3>{{ cart.dicount }}</h3>
         </div>
         <div class="cart-last-control">
-          <h3>سعر المنتج</h3>
-          <h3>22</h3>
+          <h3>سعر الشحن</h3>
+          <h3>{{ cart.delivery_price }}</h3>
+        </div>
+        <div class="cart-last-control">
+          <h3>الإجمالي</h3>
+          <h3>{{ cart.total_price }}</h3>
         </div>
         <button class="pay-btn">الدفع</button>
       </div>
@@ -42,14 +50,15 @@ export default {
     CartItem,
   },
   computed: {
-    items() {
-      return this.$store.getters.items;
+    cart() {
+      return this.$store.getters.cartAll;
     },
+
     cartState() {
       return this.$store.getters.cartState;
     },
-    cartAmount() {
-      return this.$store.getters.itemAmount;
+    cartQuantity() {
+      return this.$store.getters.cartQuantity;
     },
   },
   methods: {

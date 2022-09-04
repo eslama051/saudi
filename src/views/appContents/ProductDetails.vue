@@ -1,5 +1,8 @@
 <template>
   <div class="product-detail-page">
+    <transition name="fade">
+      <login-model @close-login-model="closeModel" v-if="needToLogin" />
+    </transition>
     <div class="product-detail container" v-if="product">
       <!-- <div class="product-detail-img-container">
         <img :src="product.img" alt="" />
@@ -80,6 +83,7 @@ export default {
       quantity: 0,
       selecetedSize: "",
       sizes: "",
+      needToLogin: false,
     };
   },
   props: ["id"],
@@ -109,9 +113,9 @@ export default {
       }
       this.quantity++;
     },
-    playSound() {
-      new Audio(require("../../assets/audio/mangkeyou_sharingan.mp3")).play();
-    },
+    // playSound() {
+    //   new Audio(require("../../assets/audio/mangkeyou_sharingan.mp3")).play();
+    // },
     addToCart() {
       if (this.selecetedColor == "") {
         this.$iziToast.error({
@@ -134,22 +138,23 @@ export default {
         });
         return;
       }
-      this.$store.dispatch("addItem", {
-        item: {
-          id: this.id,
-          ...this.product,
-          quantity: this.quantity,
-          color: this.selecetedColor,
-          size: this.selecetedSize,
-        },
-      });
+
+      if (!this.$store.getters.token) {
+        this.needToLogin = true;
+      }
+      const formData = new FormData();
+      formData.append("product_id", this.product.id);
+      formData.append("provider_id", this.product.user.id);
+      formData.append("quantity", this.quantity);
+      formData.append("color_id", this.selecetedColor.color.id);
+      formData.append("size_id", this.selecetedSize.id);
+      this.$store.dispatch("addItem", formData);
       // this.$router.push("/");
-      this.playSound();
-      this.$iziToast.success({
-        title: "Item",
-        message: "Add To The Cart",
-      });
+      // this.playSound();
       // this.$store.dispatch("openCart");
+    },
+    closeModel() {
+      this.needToLogin = false;
     },
   },
   created() {

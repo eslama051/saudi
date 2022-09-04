@@ -3,7 +3,7 @@
     <div class="container about-container">
       <div class="about-info">
         <h1>معلومات عنا</h1>
-        <d v-html="about"> </d>
+        <p v-html="about"></p>
         <base-button title="اقرا المزيد" :link="true" to="/about" />
       </div>
       <div class="about-img">

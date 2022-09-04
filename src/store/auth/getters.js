@@ -2,6 +2,7 @@ export default {
   token(state) {
     return state.token;
   },
+
   userAvatar(state) {
     return state.user_avatar;
   },

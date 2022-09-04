@@ -1,14 +1,17 @@
 export default {
-  items(state) {
-    return state.items;
+  cartAll(state) {
+    return state.cart;
   },
   cartState(state) {
     return state.cartState;
   },
+  cartQuantity(_, getters) {
+    return getters.cartAll.data.items.reduce(
+      (prev, curr) => curr.quantity + prev,
+      0
+    );
+  },
   wishState(state) {
     return state.wishState;
-  },
-  itemAmount(state) {
-    return state.items.reduce((prev, curr) => curr.quantity + prev, 0);
   },
 };

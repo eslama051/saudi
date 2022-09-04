@@ -29,6 +29,9 @@ export default {
     ProfileComponent,
     SearchBox,
   },
+  async created() {
+    await this.$store.dispatch("getCart");
+  },
 };
 </script>
 

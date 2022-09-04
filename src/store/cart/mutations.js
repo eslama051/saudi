@@ -18,6 +18,10 @@ export default {
       state.items.push(newItem);
     }
   },
+
+  cart(state, payload) {
+    state.cart = payload;
+  },
   closeCart(state) {
     state.cartState = false;
   },

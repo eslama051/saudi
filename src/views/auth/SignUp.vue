@@ -44,15 +44,6 @@
       />
       <button class="main-btn">Sign Up</button>
     </form>
-    <div class="btns">
-      <a class="flow-btn"
-        ><img src="../../assets/images/auth/googleBtn.png" alt=""
-      /></a>
-      <a class="flow-btn"
-        ><img src="../../assets/images/auth/facebookBtn.png" alt=""
-      /></a>
-    </div>
-
     <p>
       Have An Account?
       <span

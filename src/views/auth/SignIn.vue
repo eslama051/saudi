@@ -16,14 +16,6 @@
       >
       <button class="main-btn">Sign In</button>
     </form>
-    <div class="btns">
-      <a class="flow-btn"
-        ><img src="../../assets/images/auth/googleBtn.png" alt=""
-      /></a>
-      <a class="flow-btn"
-        ><img src="../../assets/images/auth/facebookBtn.png" alt=""
-      /></a>
-    </div>
 
     <p>
       Don't You Have An Account?
@@ -84,6 +76,7 @@ export default {
 .login-container {
   text-align: center;
   z-index: 2;
+  width: 100%;
   img {
     margin-bottom: 1rem;
   }
@@ -98,8 +91,12 @@ export default {
   align-items: center;
   flex-direction: column;
   row-gap: 1rem;
+  width: 100%;
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  h4 {
+    margin-bottom: 2rem;
   }
   a {
     color: red;
@@ -112,11 +109,12 @@ export default {
   }
   input {
     background: inherit;
-    padding: 0.8rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 20px;
-    width: 100%;
     border: 1px solid gray;
     margin-bottom: 1rem;
+    width: 80%;
+    max-width: 20rem;
   }
   .main-btn {
     margin-top: -1rem;

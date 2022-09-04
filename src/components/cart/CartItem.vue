@@ -2,10 +2,10 @@
   <div class="cart-item">
     <div class="cart-item-info">
       <div class="cart-item-img-container">
-        <img :src="item.img" alt="" />
+        <img :src="item.product.image" alt="" />
       </div>
       <div class="cart-item-text">
-        <h2>{{ item.title }}</h2>
+        <h2>{{ item.product.name }}</h2>
         <h3>{{ item.type }}</h3>
         <h2 class="item-price">{{ item.price }}</h2>
       </div>
