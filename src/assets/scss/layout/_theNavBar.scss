@@ -124,13 +124,13 @@
       display: none;
     }
     & {
-      padding: 1rem 2rem;
+      padding: 1rem 0rem;
     }
     .nav-toggle {
       display: block;
-      font-size: 1rem;
+      font-size: 1.4rem;
       transition: all 0.5s;
-      background-color: rgb(216, 197, 197);
+      background-color: rgba(216, 197, 197, 0.6);
       color: #43290a;
       height: 35px;
       display: flex;

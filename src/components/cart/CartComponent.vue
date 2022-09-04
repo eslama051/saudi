@@ -9,9 +9,9 @@
       </button>
       <h1>السله</h1>
       <h3>
-        <span>{{ cartQuantity }} </span> عناصر في السله
+        <span>{{ cartElements }} </span> عناصر في السله
       </h3>
-      <div class="cart-items-container" v-if="cart.data.items.length > 0">
+      <div class="cart-items-container" v-if="cart.data">
         <cart-item
           v-for="item in cart.data.items"
           :key="item.cart_item_id"
@@ -57,8 +57,8 @@ export default {
     cartState() {
       return this.$store.getters.cartState;
     },
-    cartQuantity() {
-      return this.$store.getters.cartQuantity;
+    cartElements() {
+      return this.$store.getters.cartElements;
     },
   },
   methods: {

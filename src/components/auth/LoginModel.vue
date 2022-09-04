@@ -91,9 +91,14 @@ export default {
     width: 80%;
     max-width: 30rem;
     border-radius: 20px;
-    border: 1px solid gray;
+    border: 1px solid rgb(177, 169, 169);
     margin-top: -10rem;
     text-align: center;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    );
+    backdrop-filter: blur(5px);
     a {
       font-weight: bold;
       color: black;
@@ -136,7 +141,7 @@ export default {
       }
     }
     .main-btn {
-      padding: 0.3rem 1rem;
+      padding: 0.3rem 2rem;
     }
   }
 }

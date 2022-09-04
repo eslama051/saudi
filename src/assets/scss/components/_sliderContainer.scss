@@ -5,10 +5,11 @@
   background-color: #f7f5ef;
   align-items: center;
   //   flex-wrap: wrap;
-  width: 100vw;
+  padding: o;
+  width: 100%;
   column-gap: 1rem;
-
-  //   overflow: hidden;
+  flex-wrap: wrap;
+  overflow-x: hidden;
   .social-media-wrapper {
     display: flex;
     flex-direction: column;
@@ -40,7 +41,7 @@
     overflow: hidden;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-
+    overflow-x: hidden;
     .owl-itema {
       height: calc(100vh - 75px);
       width: 100%;

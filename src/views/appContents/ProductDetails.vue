@@ -70,11 +70,24 @@
         </div>
       </div>
     </div>
+    <product-comment :product="product" />
+    <section class="similar_product_section">
+      <h1>منتجات متشابه</h1>
+      <div class="smiliar_product_container container">
+        <latest-item
+          v-for="item in product.similerProduct"
+          :key="item.id"
+          :item="item"
+        ></latest-item>
+      </div>
+    </section>
   </div>
 </template>
 <script>
 import server from "@/apis/server";
 import SlickCarousel from "../../components/ui/SlickCarousel.vue";
+import LatestItem from "../../components/home/LatestItem.vue";
+import ProductComment from "../../components/product/ProductComment.vue";
 export default {
   data() {
     return {
@@ -87,7 +100,23 @@ export default {
     };
   },
   props: ["id"],
-  components: { SlickCarousel },
+  watch: {
+    id() {
+      server
+        .get(`client/show_product/${this.id}`, {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+            "Content-Type": "application/json",
+            "Accept-Language": "ar",
+          },
+        })
+        .then((res) => {
+          this.product = res.data.data;
+        });
+      window.scrollTo(0, 0);
+    },
+  },
+  components: { SlickCarousel, LatestItem, ProductComment },
   // computed: {
   //   product() {
   //     return this.$store.getters.product(this.id);

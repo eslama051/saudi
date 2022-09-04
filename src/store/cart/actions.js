@@ -43,11 +43,37 @@ export default {
   openCart(context) {
     context.commit("openCart");
   },
-  removeItem(context, id) {
-    context.commit("removeItem", id);
+  removeItem(context, payload) {
+    server
+      .delete(`client/delete_item/${payload.id}`, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        context.commit("cart", res.data);
+      });
   },
-  decreaseItemQuantity(context, id) {
-    context.commit("decreaseItemQuantity", id);
+  updateItemQuantity(context, payload) {
+    const formData = new FormData();
+    formData.append("quantity", payload.quantity);
+    server
+      .post(`client/update_item_quantity/${payload.id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        context.commit("cart", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
   increaseItemQuantity(context, id) {
     context.commit("increaseItemQuantity", id);

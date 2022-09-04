@@ -17,7 +17,7 @@
         <span class="increment" @click="incrementQuan">+</span>
       </div>
     </div>
-    <button @click="removeItem(item.id)"><i class="fa fa-trash"></i></button>
+    <button @click="removeItem()"><i class="fa fa-trash"></i></button>
   </div>
 </template>
 
@@ -26,17 +26,24 @@ export default {
   props: ["item"],
   methods: {
     decrementQuan() {
-      if (this.item.quantity <= 1) {
-        this.$store.dispatch("removeItem", this.item.id);
+      if (this.item.quantity == 1) {
+        this.$store.dispatch("removeItem", {
+          id: this.item.cart_item_id,
+        });
       }
-      this.$store.dispatch("decreaseItemQuantity", this.item.id);
+      this.$store.dispatch("updateItemQuantity", {
+        id: this.item.cart_item_id,
+        quantity: this.item.quantity - 1,
+      });
     },
     incrementQuan() {
-      this.$store.dispatch("increaseItemQuantity", this.item.id);
-      console.log(this.item);
+      this.$store.dispatch("updateItemQuantity", {
+        id: this.item.cart_item_id,
+        quantity: this.item.quantity + 1,
+      });
     },
-    removeItem(id) {
-      this.$store.dispatch("removeItem", id);
+    removeItem() {
+      this.$store.dispatch("removeItem", { id: this.item.cart_item_id });
     },
   },
 };
