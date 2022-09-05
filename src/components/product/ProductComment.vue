@@ -1,7 +1,7 @@
 <template>
   <section class="product_details_wrapper">
-    <h1>تفاصيل المنتج</h1>
     <div class="container">
+      <h1>تفاصيل المنتج</h1>
       <div class="product_details_taps">
         <button @click="openComments">التعليقات</button>
         <button class="active" @click="openDesc">عن المنتج</button>
@@ -69,31 +69,56 @@
           </div>
           <div class="comment-input-container">
             <h4>أضف تقييمك</h4>
-            <form class="rating">
+            <form class="rating" @submit.prevent>
               <label>
-                <input type="radio" name="stars" value="1" />
+                <input
+                  @change="(e) => getRateValue(e.target.value)"
+                  type="radio"
+                  name="stars"
+                  value="1"
+                />
                 <span><i class="fa fa-star"></i></span>
               </label>
               <label>
-                <input type="radio" name="stars" value="2" />
-                <span><i class="fa fa-star"></i></span>
-                <span><i class="fa fa-star"></i></span>
-              </label>
-              <label>
-                <input type="radio" name="stars" value="3" />
-                <span><i class="fa fa-star"></i></span>
-                <span><i class="fa fa-star"></i></span>
-                <span><i class="fa fa-star"></i></span>
-              </label>
-              <label>
-                <input type="radio" name="stars" value="4" />
-                <span><i class="fa fa-star"></i></span>
-                <span><i class="fa fa-star"></i></span>
+                <input
+                  @change="(e) => getRateValue(e.target.value)"
+                  type="radio"
+                  name="stars"
+                  value="2"
+                />
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
               </label>
               <label>
-                <input type="radio" name="stars" value="5" />
+                <input
+                  @change="(e) => getRateValue(e.target.value)"
+                  type="radio"
+                  name="stars"
+                  value="3"
+                />
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+              </label>
+              <label>
+                <input
+                  @change="(e) => getRateValue(e.target.value)"
+                  type="radio"
+                  name="stars"
+                  value="4"
+                />
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+              </label>
+              <label>
+                <input
+                  @change="(e) => getRateValue(e.target.value)"
+                  type="radio"
+                  name="stars"
+                  value="5"
+                />
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
@@ -103,8 +128,8 @@
             </form>
             <label for="comment-input"><h4>أضف تعليقك</h4></label>
 
-            <input type="text" id="comment-input" />
-            <button class="main-btn">إرسال</button>
+            <input type="text" id="comment-input" v-model="comment" />
+            <button class="main-btn" @click="sendRate">إرسال</button>
           </div>
         </article>
         <article>
@@ -117,6 +142,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      rateValue: "",
+      comment: "",
+    };
+  },
   props: ["product"],
   methods: {
     openComments(e) {
@@ -132,6 +163,24 @@ export default {
       document
         .querySelector(".product_details_window")
         .classList.remove("toggle_product_details_window");
+    },
+    getRateValue(value) {
+      this.rateValue = value;
+    },
+    sendRate() {
+      if (this.rateValue == "") {
+        this.$iziToast.error({
+          message: "please choose a rate",
+        });
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("product_id", this.product.id);
+      formData.append("rating_value", this.rateValue);
+      formData.append("comment", this.comment);
+
+      this.$store.dispatch("sendRate", formData);
     },
   },
 };

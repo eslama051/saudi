@@ -142,20 +142,39 @@
       margin-top: 3rem;
       .coupon-container {
         margin-bottom: 1rem;
+        border: none;
+        // background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
+
+        width: 100%;
+        padding: 0 1rem;
+        border: 1px solid rgb(124, 139, 55);
+        border-radius: 20px;
+        text-align: right;
+        color: rgb(124, 139, 55);
+        outline: none;
+        display: flex;
+        flex-direction: row-reverse;
         input {
           border: none;
           // background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
           background-color: inherit;
           width: 100%;
-          padding: 0.5rem 2rem;
-          border: 1px solid rgb(124, 139, 55);
-          border-radius: 20px;
+          padding: 0.5rem;
           text-align: right;
           color: rgb(124, 139, 55);
           outline: none;
           &::placeholder {
             color: rgb(124, 139, 55);
             font-size: 0.8rem;
+          }
+        }
+        button {
+          background: inherit;
+          border: none;
+          color: rgb(124, 139, 55);
+          transition: all 0.3s;
+          &:hover {
+            color: #43290a;
           }
         }
       }

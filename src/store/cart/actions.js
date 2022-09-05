@@ -1,4 +1,5 @@
 import server from "@/apis/server";
+
 import iziToast from "izitoast";
 export default {
   addItem(context, payload) {
@@ -24,9 +25,22 @@ export default {
       });
   },
 
-  async getCart(context) {
-    await server
+  getCart(context) {
+    server
       .get("client/get_cart", {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        context.commit("cart", res.data);
+      });
+  },
+  applyCoupon(context) {
+    server
+      .get("client/apply_coupon/saudi_marsheeh_2022", {
         headers: {
           Authorization: `Bearer ${context.rootState.auth.token}`,
           "Content-Type": "application/json",
@@ -42,6 +56,9 @@ export default {
   },
   openCart(context) {
     context.commit("openCart");
+  },
+  openWallet(context) {
+    context.commit("openWallet");
   },
   removeItem(context, payload) {
     server
@@ -85,5 +102,38 @@ export default {
   },
   openWish(context) {
     context.commit("openWish");
+  },
+  refund(context, payload) {
+    server
+      .post("wallet/refund", payload, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.error({
+          message: `${res.data.message}`,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        throw new Error("smth went wrong come back late");
+      });
+  },
+  getAddresses(context) {
+    server
+      .get("client/address", {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        console.log("LOL =>", res.data.data);
+        context.commit("addresses", res.data.data);
+      });
   },
 };

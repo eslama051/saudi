@@ -9,13 +9,13 @@
       <div class="item-footer">
         <div>
           <font-awesome-icon
-            @click.stop="removeFromWished"
-            v-if="item.wished"
+            @click.stop="ToggleToWished"
+            v-if="item.is_fav"
             class="heart-icon-wished"
             icon="fa fa-heart"
           ></font-awesome-icon>
           <font-awesome-icon
-            @click.stop="addToWished"
+            @click.stop="ToggleToWished"
             v-else
             class="heart-icon"
             icon="fa fa-heart"
@@ -43,8 +43,8 @@ export default {
     openProductDetails(id) {
       this.$router.push(`/product-details/${id}`);
     },
-    addToWished() {
-      this.$store.dispatch("addToFavs", { id: this.item.id });
+    ToggleToWished() {
+      this.$store.dispatch("toggleToFavs", { id: this.item.id });
     },
     removeFromWished() {
       this.$store.dispatch("removeFromWished", this.item.id);

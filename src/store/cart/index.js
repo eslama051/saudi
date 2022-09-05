@@ -9,6 +9,8 @@ export default {
     cartState: false,
     wishState: false,
     cart: {},
+    walletState: false,
+    addresses: [],
   },
   mutations,
   actions,

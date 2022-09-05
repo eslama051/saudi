@@ -133,7 +133,7 @@
   .wish-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
+    gap: 2rem 2rem;
     margin-top: 2rem;
     @media screen and (max-width: 450px) {
       grid-template-columns: 1fr;
@@ -163,9 +163,12 @@
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 1rem;
+      height: 400px;
       img {
+        height: 100%;
         width: 100%;
         display: block;
+        object-fit: cover;
       }
     }
     .item-footer {

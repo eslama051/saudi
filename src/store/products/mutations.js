@@ -1,24 +1,8 @@
 import Vue from "vue";
 
 export default {
-  addToWished(state, id) {
-    let newItem = null;
-    state.latest.forEach((item) => {
-      if (item.id == id) {
-        Vue.set(item, "wished", true);
-        newItem = item;
-      }
-      return item;
-    });
-
-    state.mostSelled.forEach((item) => {
-      if (item.id == id) {
-        Vue.set(item, "wished", true);
-        newItem = item;
-      }
-      return item;
-    });
-    state.wished.push(newItem);
+  favs(state, payload) {
+    state.favs = payload;
   },
   removeFromWished(state, id) {
     state.latest.forEach((item) => {
@@ -39,3 +23,23 @@ export default {
     });
   },
 };
+
+// addToWished(state, id) {
+//   let newItem = null;
+//   state.latest.forEach((item) => {
+//     if (item.id == id) {
+//       Vue.set(item, "wished", true);
+//       newItem = item;
+//     }
+//     return item;
+//   });
+
+//   state.mostSelled.forEach((item) => {
+//     if (item.id == id) {
+//       Vue.set(item, "wished", true);
+//       newItem = item;
+//     }
+//     return item;
+//   });
+//   state.wished.push(newItem);
+// },

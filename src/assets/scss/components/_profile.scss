@@ -53,13 +53,17 @@
           overflow: hidden;
           img {
             display: block;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
           }
+        }
+        h2 {
+          font-size: 1.5rem;
+          font-weight: bold;
         }
       }
       .user-edit-btn {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         cursor: pointer;
         color: #43290a;
       }

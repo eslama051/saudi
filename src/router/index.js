@@ -16,7 +16,8 @@ import ProductDetails from "../views/appContents/ProductDetails.vue";
 import MyOrders from "../views/appContents/MyOrders.vue";
 import AccountDetails from "../views/appContents/AccountDetails.vue";
 import CategoriesPage from "../views/appContents/CategoriesPage.vue";
-
+import CheckOut from "../views/appContents/CheckOut.vue";
+import AddressesPage from "../views/appContents/AddressesPage.vue";
 //Auth veiw
 import SignIn from "../views/auth/SignIn.vue";
 import SignUp from "../views/auth/SignUp.vue";
@@ -43,6 +44,8 @@ const routes = [
       { path: "orders", component: MyOrders },
       { path: "account/details", component: AccountDetails },
       { path: "categories/:id", component: CategoriesPage, props: true },
+      { path: "checkout", component: CheckOut },
+      { path: "addresses", component: AddressesPage },
     ],
   },
   {

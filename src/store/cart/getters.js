@@ -14,4 +14,10 @@ export default {
   wishState(state) {
     return state.wishState;
   },
+  walletState(state) {
+    return state.walletState;
+  },
+  addresses(state) {
+    return state.addresses;
+  },
 };

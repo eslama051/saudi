@@ -9,7 +9,7 @@
       </button>
       <h1>المفضلة</h1>
       <div class="wish-container">
-        <latest-item v-for="item in items" :key="item.id" :item="item" />
+        <latest-item v-for="item in favs" :key="item.id" :item="item" />
       </div>
     </div>
   </section>
@@ -24,8 +24,8 @@ export default {
     wishState() {
       return this.$store.getters.wishState;
     },
-    items() {
-      return this.$store.getters.wished;
+    favs() {
+      return this.$store.getters.favs;
     },
   },
   methods: {

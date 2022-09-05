@@ -28,6 +28,9 @@ export default {
   openCart(state) {
     state.cartState = true;
   },
+  openWallet(state) {
+    state.walletState = true;
+  },
   removeItem(state, id) {
     state.items = state.items.filter((item) => item.id != id);
   },
@@ -56,5 +59,8 @@ export default {
   },
   openWish(state) {
     state.wishState = true;
+  },
+  addresses(state, payload) {
+    state.addresses = payload;
   },
 };

@@ -12,7 +12,7 @@ export default {
     return state.mostSelled.find((item) => item.id == id);
   },
 
-  wished(state) {
-    return state.wished;
+  favs(state) {
+    return state.favs;
   },
 };

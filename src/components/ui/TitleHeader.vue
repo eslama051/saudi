@@ -35,6 +35,7 @@ export default {
   position: relative;
   h1 {
     margin-bottom: 1rem;
+    font-size: 1.7rem;
   }
   img {
     position: absolute;
@@ -50,6 +51,7 @@ export default {
   }
   a {
     color: #43290a;
+    font-size: 1rem;
   }
   a.title-gray {
     color: gray;

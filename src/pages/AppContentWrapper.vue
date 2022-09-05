@@ -7,6 +7,8 @@
     <cart-component />
     <wish-list />
     <profile-component />
+    <wallet-component />
+    <refund-component />
     <search-box />
     <the-footer></the-footer>
   </div>
@@ -18,6 +20,8 @@ import TheNavBar from "../components/layouts/TheNavBar.vue";
 import CartComponent from "../components/cart/CartComponent.vue";
 import WishList from "../components/wishlist/WishList.vue";
 import ProfileComponent from "../components/profile/ProfileComponent.vue";
+import WalletComponent from "../components/wallet/WalletComponent.vue";
+import RefundComponent from "../components/wallet/RefundComponent.vue";
 import SearchBox from "../components/search/SearchBox.vue";
 export default {
   // importing the navbar
@@ -28,9 +32,12 @@ export default {
     WishList,
     ProfileComponent,
     SearchBox,
+    WalletComponent,
+    RefundComponent,
   },
-  async created() {
-    await this.$store.dispatch("getCart");
+  created() {
+    this.$store.dispatch("getCart");
+    this.$store.dispatch("getFavs");
   },
 };
 </script>

@@ -23,8 +23,12 @@
       </div>
       <div class="profile-component-body">
         <profile-item icon="box" title="طلباتي" link="/orders" />
-        <profile-item icon="wallet" title="رصيد الحساب" link="/" />
-        <profile-item icon="location-dot" title="العناوين" link="/" />
+        <profile-item
+          icon="wallet"
+          title="رصيد الحساب"
+          @clicked-item="showWallet"
+        />
+        <profile-item icon="location-dot" title="العناوين" link="/addresses" />
         <profile-item icon="circle-question" title="الأسئلة الشائعة" link="/" />
         <profile-item icon="note-sticky" title="سياية خصوصيه" link="/" />
         <profile-item
@@ -58,6 +62,12 @@ export default {
     signOut() {
       console.log("smth");
       this.$store.dispatch("signOut");
+    },
+    showWallet() {
+      document
+        .getElementById("wallet-component-container")
+        .classList.add("show-profile");
+      document.body.style.overflowY = "hidden";
     },
   },
 };
