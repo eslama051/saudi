@@ -18,6 +18,9 @@ import AccountDetails from "../views/appContents/AccountDetails.vue";
 import CategoriesPage from "../views/appContents/CategoriesPage.vue";
 import CheckOut from "../views/appContents/CheckOut.vue";
 import AddressesPage from "../views/appContents/AddressesPage.vue";
+import AddressEdit from "../components/addresses/AddressEidt.vue";
+import CheckOutCardInfo from "../views/appContents/CheckOutCardInfo.vue";
+import AddressCreate from "../components/addresses/AddressCreate.vue";
 //Auth veiw
 import SignIn from "../views/auth/SignIn.vue";
 import SignUp from "../views/auth/SignUp.vue";
@@ -45,7 +48,10 @@ const routes = [
       { path: "account/details", component: AccountDetails },
       { path: "categories/:id", component: CategoriesPage, props: true },
       { path: "checkout", component: CheckOut },
+      { path: "checkout/payment-card-info", component: CheckOutCardInfo },
       { path: "addresses", component: AddressesPage },
+      { path: "addresses/edit/:id", component: AddressEdit, props: true },
+      { path: "addresses/create", component: AddressCreate },
     ],
   },
   {

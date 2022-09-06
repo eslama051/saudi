@@ -1,4 +1,5 @@
 import server from "@/apis/server";
+import router from "@/router";
 
 import iziToast from "izitoast";
 export default {
@@ -132,8 +133,60 @@ export default {
         },
       })
       .then((res) => {
-        console.log("LOL =>", res.data.data);
         context.commit("addresses", res.data.data);
+      });
+  },
+  createOrder(context, payload) {
+    server
+      .post("client/client_order", payload, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/checkout/payment-card-info");
+      })
+      .catch((err) => {
+        iziToast.error({
+          message: err.response.data.message,
+        });
+      });
+  },
+  editAddress(context, payload) {
+    server
+      .put(`client/address/${payload.id}`, payload.object, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/addresses");
+      });
+  },
+  addAddress(context, payload) {
+    server
+      .post("client/address", payload, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/addresses");
       });
   },
 };

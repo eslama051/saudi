@@ -3,7 +3,12 @@
     <h3>{{ item.name }}</h3>
     <h4>{{ item.address }}</h4>
     <div class="addresses-item-btns">
-      <base-button class="edit-btn" title="تعديل" />
+      <base-button
+        class="edit-btn"
+        title="تعديل"
+        :to="`/addresses/edit/${item.id}`"
+        :link="true"
+      />
       <button class="del-btn">حذف</button>
     </div>
   </section>
@@ -24,6 +29,9 @@ export default {
   border-radius: 10px;
   text-align: right;
   width: 49%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
   h3 {
     color: #43290a;
     font-size: 1.5rem;

@@ -57,6 +57,9 @@ export default {
 }
 a {
   color: #43290a;
+  &:hover {
+    color: gray;
+  }
 }
 .reverse {
   flex-direction: row-reverse;

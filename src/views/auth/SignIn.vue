@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import router from "@/router";
 export default {
   data() {
     return {
@@ -68,6 +69,11 @@ export default {
       });
       this.$router.push("/");
     },
+  },
+  beforeRouteEnter() {
+    if (localStorage.getItem("saudi_marche_user_token") != "") {
+      router.push("/");
+    }
   },
 };
 </script>
