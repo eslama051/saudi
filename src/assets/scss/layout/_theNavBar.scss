@@ -82,11 +82,29 @@
       :hover {
         color: gray;
       }
+      position: relative;
+      .nav-btn-span {
+        position: absolute;
+        background-color: #f7f5ef;
+        padding: 2px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        top: 90%;
+        left: 50%;
+        border-radius: 10px;
+        transform: scale(0);
+        transition: all 0.4s;
+      }
+      &:hover .nav-btn-span {
+        transform: scale(1) translateX(-45%);
+      }
     }
     .cart {
       position: relative;
       // height: 10px;
-      span {
+      .fa-cart-quan {
         position: absolute;
         color: white;
         transform: translate(50%, -40%) scale(0.6);
@@ -194,16 +212,40 @@
       left: 0;
       top: 100vh;
       transform: translateY(-100%);
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
       padding: 0.5rem 1rem;
       // z-index: 1000;
       a {
         display: flex;
         flex-direction: column;
         font-size: 1.2rem;
+        align-items: center;
+        transition: all 0.3s;
+
         h5 {
-          font-size: 0.7rem;
+          font-size: 0.8rem;
+        }
+        &:hover {
+          // opacity: ;
+          transform: scale(1.2);
+        }
+      }
+      button {
+        background: inherit;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        color: #43290a;
+        align-items: center;
+        transition: all 0.3s;
+        h5 {
+          font-size: 0.8rem;
+        }
+        &:hover {
+          // opacity: 0.5;
+          transform: scale(1.3);
         }
       }
       .nav-btn-home {

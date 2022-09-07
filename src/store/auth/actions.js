@@ -1,5 +1,6 @@
 import server from "@/apis/server";
 import iziToast from "izitoast";
+import router from "@/router";
 
 export default {
   async signup(context, payload) {
@@ -53,7 +54,7 @@ export default {
       });
   },
 
-  async checkCode(_, payload) {
+  async verifyCode(_, payload) {
     // const code = JSON.parse(
     //   localStorage.getItem("saudi_marche_verification_code")
     // );
@@ -115,6 +116,73 @@ export default {
           message: res.data.message,
         });
         context.commit("signOut");
+      });
+  },
+  forgotPassword(context, payload) {
+    server
+      .post("forgot_password", payload, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/auth/Forget/password/veirf");
+      })
+      .catch((err) => {
+        iziToast.error({
+          message: err.response.data.message,
+        });
+        console.log(err);
+        throw new Error();
+      });
+  },
+  checkCode(context, payload) {
+    const formData = new FormData();
+    formData.append("phone", localStorage.getItem("suadi_phone"));
+    formData.append("code", payload.code);
+    server
+      .post("check_code", formData, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        localStorage.setItem("suadi_check_code", payload.code);
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/auth/password/reset");
+      })
+      .catch((err) => {
+        iziToast.error({
+          message: err.response.data.message,
+        });
+      });
+  },
+  resetPassword(context, payload) {
+    const formData = new FormData();
+    formData.append("phone", localStorage.getItem("suadi_phone"));
+    formData.append("code", localStorage.getItem("suadi_check_code"));
+    formData.append("password", payload.password);
+    server
+      .post("reset_password", formData, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/");
       });
   },
 };

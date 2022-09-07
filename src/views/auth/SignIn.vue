@@ -70,10 +70,14 @@ export default {
       this.$router.push("/");
     },
   },
-  beforeRouteEnter() {
-    if (localStorage.getItem("saudi_marche_user_token") != "") {
+  beforeRouteEnter(_, _2, next) {
+    if (
+      localStorage.getItem("saudi_marche_user_token") &&
+      localStorage.getItem("saudi_marche_user_token") != ""
+    ) {
       router.push("/");
     }
+    return next();
   },
 };
 </script>
@@ -124,7 +128,7 @@ export default {
   }
   .main-btn {
     margin-top: -1rem;
-    padding: 0.6rem 4rem;
+    padding: 0.4rem 4rem;
   }
 }
 .btns {

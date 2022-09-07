@@ -20,4 +20,7 @@ export default {
   addresses(state) {
     return state.addresses;
   },
+  searchResults(state) {
+    return state.search;
+  },
 };

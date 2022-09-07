@@ -1,10 +1,10 @@
 <template>
   <div>
-    <input name="code" class="code-input" required />
-    <input name="code" class="code-input" required />
-    <input name="code" class="code-input" required />
-    <input name="code" class="code-input" required />
-    <input name="code" class="code-input" required />
+    <input name="code" class="code-input" required autocomplete="off" />
+    <input name="code" class="code-input" required autocomplete="off" />
+    <input name="code" class="code-input" required autocomplete="off" />
+    <input name="code" class="code-input" required autocomplete="off" />
+    <input name="code" class="code-input" required autocomplete="off" />
   </div>
 </template>
 
@@ -57,10 +57,10 @@ export default {
 <style lang="scss" scoped>
 .code-input {
   background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
-  padding: 1rem;
+  padding: 0.8rem;
 
-  width: 80px;
-  margin: 1rem;
+  width: 70px;
+  margin: 0.5rem;
   border-radius: 15px;
   border: 1px solid gray;
   text-align: center;

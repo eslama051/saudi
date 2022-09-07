@@ -1,3 +1,5 @@
+import router from "@/router";
+
 export default {
   addItem(state, payload) {
     let newItem = payload.item;
@@ -62,5 +64,13 @@ export default {
   },
   addresses(state, payload) {
     state.addresses = payload;
+  },
+
+  search(state, payload) {
+    state.search = payload;
+    if (router.currentRoute.fullPath == "/search/results") {
+      return;
+    }
+    router.push("/search/results");
   },
 };

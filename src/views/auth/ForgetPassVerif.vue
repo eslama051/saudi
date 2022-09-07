@@ -11,8 +11,15 @@ import VerifInputContainer from "@/components/auth/VerifInputContainer.vue";
 export default {
   components: { VerifInputContainer },
   methods: {
-    verifing() {
-      this.$router.push("/auth/newpassword");
+    verifing(code) {
+      if (code == "") {
+        this.$ziToast.error({
+          message: "حقل الكود فارغ",
+        });
+        return;
+      }
+      this.$store.dispatch("checkCode", { code });
+      // this.$router.push("/auth/newpassword");
     },
   },
 };

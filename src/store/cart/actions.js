@@ -189,4 +189,40 @@ export default {
         router.push("/addresses");
       });
   },
+  deleteAddress(context, payload) {
+    server
+      .delete(`client/address/${payload.id}`, {
+        headers: {
+          Authorization: `Bearer ${context.rootState.auth.token}`,
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        context.commit("addresses", res.data.data);
+        iziToast.success({
+          message: "تم حذف العنوان بنجاح",
+        });
+      })
+      .catch(() => {
+        throw new Error("smth went wrong");
+      });
+  },
+  search(context, payload) {
+    server
+      .get("search", {
+        params: {
+          keyword: payload.keyword,
+          type: false,
+        },
+      })
+      .then((res) => {
+        context.commit("search", res.data.data);
+      })
+      .catch((error) => {
+        iziToast.error({
+          message: error.response.data.message || "smth is quite missing ",
+        });
+      });
+  },
 };

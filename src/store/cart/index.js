@@ -11,6 +11,7 @@ export default {
     cart: {},
     walletState: false,
     addresses: [],
+    search: [],
   },
   mutations,
   actions,

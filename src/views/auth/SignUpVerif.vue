@@ -13,7 +13,7 @@ export default {
   methods: {
     async submitting(code) {
       try {
-        await this.$store.dispatch("checkCode", { code: code });
+        await this.$store.dispatch("verifyCode", { code: code });
       } catch (error) {
         this.$iziToast.error({
           // title: "Error: ",

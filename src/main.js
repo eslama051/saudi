@@ -54,6 +54,10 @@ Vue.prototype.$axios = Axios;
 import LoginModel from "./components/auth/LoginModel.vue";
 Vue.component("login-model", LoginModel);
 
+//base-model
+import BaseModel from "./components/ui/BaseModel.vue";
+Vue.component("base-model", BaseModel);
+
 //vue google maps
 import * as VueGoogleMaps from "vue2-google-maps";
 Vue.config.productionTip = false;

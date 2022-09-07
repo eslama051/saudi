@@ -239,7 +239,7 @@ export default {
         padding: 0.8rem;
         border-radius: 50%;
         align-self: center;
-        border: 1px solid #43290a;
+        // border: 1px solid #43290a;
       }
       &:hover .addresses-item-btn,
       &.active .addresses-item-btn {

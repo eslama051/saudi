@@ -16,7 +16,7 @@
       </GmapMap>
 
       <div class="main-btn-container">
-        <button class="main-btn" @click="updateAddress">تعديل العنوان</button>
+        <button class="main-btn" @click="updateAddress">إضافة عنوان</button>
       </div>
     </div>
   </section>

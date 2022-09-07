@@ -21,6 +21,8 @@ import AddressesPage from "../views/appContents/AddressesPage.vue";
 import AddressEdit from "../components/addresses/AddressEidt.vue";
 import CheckOutCardInfo from "../views/appContents/CheckOutCardInfo.vue";
 import AddressCreate from "../components/addresses/AddressCreate.vue";
+import SearchPage from "../views/appContents/SearchPage.vue";
+
 //Auth veiw
 import SignIn from "../views/auth/SignIn.vue";
 import SignUp from "../views/auth/SignUp.vue";
@@ -28,7 +30,7 @@ import WelcomeAuth from "../views/auth/WelcomeAuth.vue";
 import SignUpVerif from "../views/auth/SignUpVerif.vue";
 import ForgetPass from "../views/auth/ForgetPass.vue";
 import ForgetPassVerif from "../views/auth/ForgetPassVerif.vue";
-import NewPass from "../views/auth/NewPassword.vue";
+import ResetPassword from "../views/auth/ResetPassword.vue";
 
 // not found
 import NotFound from "../pages/NotFound.vue";
@@ -52,6 +54,7 @@ const routes = [
       { path: "addresses", component: AddressesPage },
       { path: "addresses/edit/:id", component: AddressEdit, props: true },
       { path: "addresses/create", component: AddressCreate },
+      { path: "search/results", component: SearchPage },
     ],
   },
   {
@@ -65,7 +68,7 @@ const routes = [
       { path: "ForgetPass", component: ForgetPass },
       { path: "Forget/password", component: ForgetPass },
       { path: "Forget/password/veirf", component: ForgetPassVerif },
-      { path: "newpassword", component: NewPass },
+      { path: "password/reset", component: ResetPassword },
     ],
   },
   { path: "/:notFound(.*)", component: NotFound },

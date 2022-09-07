@@ -2,8 +2,10 @@
   <transition>
     <div class="search-container" v-if="isSearchOpened" @click="closeSearch">
       <div class="search-box" @click.stop>
-        <input type="text" placeholder="Search Here" />
-        <span @click="closeSearch"><i class="fa fa-xmark"></i></span>
+        <form action="" @submit.prevent="searchSubmit">
+          <input type="text" placeholder="Search Here" v-model="seaechInput" />
+          <span @click="clearSearchInput"><i class="fa fa-xmark"></i></span>
+        </form>
       </div>
     </div>
   </transition>
@@ -11,6 +13,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      seaechInput: "",
+    };
+  },
   computed: {
     isSearchOpened() {
       return this.$store.getters.isSearchOpened;
@@ -19,6 +26,23 @@ export default {
   methods: {
     closeSearch() {
       this.$store.dispatch("closeSearch");
+    },
+    clearSearchInput() {
+      if (this.seaechInput != "") {
+        this.seaechInput = "";
+      } else {
+        this.$store.dispatch("closeSearch");
+      }
+    },
+    searchSubmit() {
+      try {
+        this.$store.dispatch("search", { keyword: this.seaechInput });
+      } catch {
+        console.log("smth went wrong");
+        return;
+      }
+      this.seaechInput = "";
+      this.closeSearch();
     },
   },
 };

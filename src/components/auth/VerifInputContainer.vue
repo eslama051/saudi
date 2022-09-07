@@ -9,7 +9,7 @@
         Please Enter The Code That Sent To Your Email Address Or Mobile Number
       </h4>
       <base-verif></base-verif>
-      <h4>Resndding Code After</h4>
+      <h4 class="mt-2">Resndding Code After</h4>
       <h4>1:50</h4>
       <h4 class="resend-btn">Resend Code</h4>
       <button class="main-btn">Submit</button>
@@ -52,6 +52,12 @@ export default {
   h1 {
     margin-bottom: 1rem;
   }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
   p {
     color: red;
     cursor: pointer;
@@ -70,7 +76,7 @@ export default {
   }
   .main-btn {
     margin-top: 1rem;
-    padding: 0.6rem 4rem;
+    padding: 0.4rem 4rem;
   }
   .resend-btn {
     cursor: pointer;

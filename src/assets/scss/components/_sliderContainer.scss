@@ -69,6 +69,10 @@
         position: relative;
 
         opacity: 0.6;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.5;
+        }
         span {
           background-color: #43290a;
           padding: 5px;

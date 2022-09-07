@@ -9,7 +9,9 @@
         :to="`/addresses/edit/${item.id}`"
         :link="true"
       />
-      <button class="del-btn">حذف</button>
+      <button class="del-btn" @click="$emit('delete-item', item.id)">
+        حذف
+      </button>
     </div>
   </section>
 </template>
@@ -19,6 +21,7 @@ import BaseButton from "../ui/BaseButton.vue";
 export default {
   components: { BaseButton },
   props: ["item"],
+  emits: ["delete-item"],
 };
 </script>
 
@@ -35,6 +38,7 @@ export default {
   h3 {
     color: #43290a;
     font-size: 1.5rem;
+    font-weight: bold;
   }
   h4 {
     font-size: 1.2rem;

@@ -1,11 +1,15 @@
 <template>
-  <div class="password-container" @submit.stop="submiting">
+  <div class="password-container">
     <div class="logo-container">
       <img src="../../assets/images/logo.svg" alt="" />
     </div>
-    <form class="password">
+    <form class="password" @submit.prevent="submiting">
       <h4>Forget Your Password?</h4>
-      <input type="text" placeholder="Email Address Or Mobile Number" />
+      <input
+        type="text"
+        placeholder="Email Address Or Mobile Number"
+        v-model="phoneNumber"
+      />
       <button class="main-btn">Submit</button>
     </form>
   </div>
@@ -13,9 +17,25 @@
 
 <script>
 export default {
+  data() {
+    return {
+      phoneNumber: "",
+    };
+  },
   methods: {
     submiting() {
-      this.$router.push("/auth/Forget/password/veirf");
+      if (this.phoneNumber == "") {
+        this.$iziToast.error({
+          message: "حقل الهاتف فارغه",
+        });
+        return;
+      }
+      const formData = new FormData();
+      formData.append("phone", this.phoneNumber);
+
+      this.$store.dispatch("forgotPassword", formData);
+
+      localStorage.setItem("suadi_phone", this.phoneNumber);
     },
   },
 };

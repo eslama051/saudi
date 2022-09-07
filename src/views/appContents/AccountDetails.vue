@@ -38,7 +38,7 @@ div
           <input type="text" placeholder="تأكيد كلمه المرور الجديدة" />
         </div>
       </transition>
-      <button class="main-btn">حفظ</button>
+      <button class="main-btn" @click="updateProfile">حفظ</button>
     </form>
   </div>
 </template>
@@ -67,13 +67,16 @@ export default {
     loadFile(event) {
       let image = document.getElementById("account-detail-img-output");
       image.src = URL.createObjectURL(event.target.files[0]);
-      this.img = URL.createObjectURL(event.target.files[0]);
+      this.img = event.target.files[0];
     },
     togglePassword() {
       this.passwordChanging = !this.passwordChanging;
       document
         .getElementById("password-btn-container")
         .classList.toggle("active");
+    },
+    updateProfile() {
+      console.log("smt");
     },
   },
   async mounted() {
@@ -151,8 +154,8 @@ form {
     }
   }
   .img-edit {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     position: relative;
     // overflow: hidden;
     margin-bottom: 2rem;
