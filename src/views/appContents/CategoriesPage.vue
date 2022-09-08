@@ -21,6 +21,9 @@
           {{ sub_category.name }}
         </button>
       </div>
+      <button class="filter-btn">
+        فلتر<i class="smth fa-solid fa-sliders"></i>
+      </button>
       <Transition name="slide" mode="out-in">
         <div class="categories_page_products" v-if="products.length > 0">
           <latest-item
@@ -35,14 +38,16 @@
         </div>
       </Transition>
     </div>
+    <filter-box></filter-box>
   </section>
 </template>
 
 <script>
 import server from "@/apis/server";
 import LatestItem from "../../components/home/LatestItem.vue";
+import FilterBox from "../../components/categories/FilterBox.vue";
 export default {
-  components: { LatestItem },
+  components: { LatestItem, FilterBox },
   data() {
     return {
       categories: "",

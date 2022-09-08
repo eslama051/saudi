@@ -10,9 +10,21 @@
       <slick-carousel :imgs="[product.image]" class="slick" />
       <div class="product-detail-info-container">
         <div class="product-detail-info">
-          <h1>{{ product.name }}</h1>
-          <h2>الازياء والملابس</h2>
-          <h3>{{ product.desc }}</h3>
+          <div class="product-detail-header">
+            <div class="product-detail-header-h">
+              <h1>{{ product.name }}</h1>
+              <h2>الازياء والملابس</h2>
+              <h3>{{ product.desc }}</h3>
+            </div>
+            <div class="product-detail-prices">
+              <h2 class="curr_price">
+                <span>ر.س</span>{{ product.price_after_dicount }}
+              </h2>
+              <h2 style="text-decoration: line-through; color: gray">
+                <span>ر.س</span>{{ product.price_before_dicount }}
+              </h2>
+            </div>
+          </div>
           <div class="product-detail-info-flex">
             <h2>
               <span style="color: black; padding: 10px">{{ product.id }}</span
@@ -25,21 +37,22 @@
               >:الكمية المتاحه
             </h2>
           </div>
-          <div class="product-details-color">
-            <h1>الألوان</h1>
-            <div>
-              <span
-                v-for="(item, index) in product.colors"
-                :key="index"
-                :style="{ background: item.color.hex_value }"
-                @click="selecetColor(item)"
-                :class="item.id == selecetedColor.id ? 'seleceted-color' : ''"
-              >
-              </span>
+          <div class="product-colors-sizes-container">
+            <div class="product-details-color">
+              <h1 class>الألوان</h1>
+              <div>
+                <span
+                  v-for="(item, index) in product.colors"
+                  :key="index"
+                  :style="{ background: item.color.hex_value }"
+                  @click="selecetColor(item)"
+                  :class="item.id == selecetedColor.id ? 'seleceted-color' : ''"
+                >
+                </span>
+              </div>
             </div>
-          </div>
-          <transition name="fade" mode="out-in" v-if="selecetedColor">
-            <div class="product-details-sizes">
+
+            <div class="product-details-sizes" v-if="selecetedColor">
               <h1>الأحجام</h1>
               <div>
                 <span
@@ -52,7 +65,7 @@
                 </span>
               </div>
             </div>
-          </transition>
+          </div>
           <div class="order-control">
             <div class="order-quantity">
               <span class="decrement" @click="decrementQuan">-</span>
@@ -62,12 +75,12 @@
             <button @click="addToCart">أضف إالي السلة</button>
           </div>
         </div>
-        <div class="product-detail-prices">
+        <!-- <div class="product-detail-prices">
           <h2><span>ر.س</span>{{ product.price_after_dicount }}</h2>
           <h2 style="text-decoration: line-through; color: gray">
             <span>ر.س</span>{{ product.price_before_dicount }}
           </h2>
-        </div>
+        </div> -->
       </div>
     </div>
     <product-comment :product="product" />

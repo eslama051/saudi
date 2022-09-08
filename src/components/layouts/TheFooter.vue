@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer-container container">
+    <div class="footer-container">
       <div class="footer-header">
         <div class="footer-header-img-container">
           <img src="../../assets/images/logo_dark.svg" alt="" />

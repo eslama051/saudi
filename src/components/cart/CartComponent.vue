@@ -85,7 +85,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .no-cart-items {
-  padding: 5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   color: #43290a;
   img {

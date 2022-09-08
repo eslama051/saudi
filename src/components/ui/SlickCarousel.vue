@@ -1,7 +1,11 @@
 <template>
   <div class="slick-item">
     <VueSlickCarousel ref="c1" :asNavFor="c2" :focusOnSelect="true">
-      <div v-for="(img, index) in imgs" :key="index">
+      <div
+        v-for="(img, index) in imgs"
+        :key="index"
+        class="slick_carousel_img-container"
+      >
         <img :src="img" alt="" />
       </div>
     </VueSlickCarousel>
@@ -11,7 +15,11 @@
       :slidesToShow="4"
       :focusOnSelect="true"
     >
-      <div v-for="(img, index) in imgs" :key="index">
+      <div
+        v-for="(img, index) in imgs"
+        :key="index"
+        class="slick-img-container"
+      >
         <img class="slick-img" :src="img" alt="" />
       </div>
     </VueSlickCarousel>
@@ -46,10 +54,18 @@ export default {
   width: 100%;
 }
 img {
-  width: 100%;
+  // width: 100%;
   display: block;
 }
-.slick-img {
-  padding-right: 10%;
+.slick-img-container {
+  max-height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  .slick-img {
+    // padding-right: 10%;
+
+    width: 100%;
+    object-fit: cover;
+  }
 }
 </style>

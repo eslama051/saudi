@@ -26,7 +26,7 @@
               </div>
               <div class="comment_info">
                 <h4>{{ item.client.user_name }}</h4>
-                <h5>{{ item.comment }}</h5>
+                <h5 class="comment_info-comment">{{ item.comment }}</h5>
               </div>
               <div class="commnet_rate">
                 <div v-if="item.rating_value == 1">

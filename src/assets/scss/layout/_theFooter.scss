@@ -19,11 +19,21 @@
     align-items: flex-start;
     justify-content: space-between;
     column-gap: 2rem;
+    padding: 2rem 4rem;
+    @media screen and (max-width: 660px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+    }
+
     .footer-header {
       p {
         max-width: 18rem;
         margin: 1rem 0;
         margin-left: auto;
+      }
+      @media screen and (max-width: 770px) {
+        display: none;
       }
     }
     a {
@@ -38,7 +48,7 @@
     .footer-body {
       display: flex;
       column-gap: 2rem;
-      justify-content: flex-end;
+      justify-content: center;
 
       h1 {
         font-size: 1rem;
@@ -65,6 +75,17 @@
         img {
           display: block;
           width: 100%;
+        }
+      }
+      .footer-app-info-links {
+        display: flex;
+        flex-wrap: wrap;
+        // width: %;
+        a {
+          width: 45%;
+          img {
+            width: 100%;
+          }
         }
       }
     }

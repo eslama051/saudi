@@ -29,7 +29,7 @@ export default {
 .title-header {
   color: #43290a;
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
   background: #f7f5ef;
   overflow: hidden;
   position: relative;
@@ -43,6 +43,9 @@ export default {
     bottom: 0;
     &.img-1 {
       right: 0;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
     &.img-2 {
       left: 0;
@@ -55,6 +58,10 @@ export default {
   }
   a.title-gray {
     color: gray;
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 1rem;
   }
 }
 </style>

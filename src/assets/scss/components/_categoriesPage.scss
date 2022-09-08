@@ -22,11 +22,21 @@
         }
       }
     }
+    .filter-btn {
+      border: none;
+      background-color: inherit;
+      font-size: 1.2rem;
+      color: #43290a;
+      .smth {
+        transform: rotate(90deg);
+      }
+    }
     .categories_page_products {
       padding: 2rem 0rem;
       display: flex;
       flex-direction: row-reverse;
       column-gap: 1rem;
+      flex-wrap: wrap;
     }
     .categories_page_no_products {
       display: flex;

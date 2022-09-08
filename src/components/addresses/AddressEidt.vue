@@ -115,9 +115,8 @@ export default {
 }
 .address_header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 1rem;
 }
 .address_map {
   border-radius: 20px;
@@ -130,6 +129,7 @@ input {
   border-radius: 20px;
   font-size: 1.3rem;
   outline: none;
+  width: 49%;
 }
 .main-btn-container {
   display: flex;

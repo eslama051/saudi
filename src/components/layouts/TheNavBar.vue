@@ -117,7 +117,7 @@
                 <h5>تسجيل</h5>
               </router-link>
               <button @click="openCart" v-else>
-                <i class="fa fa-user"></i>
+                <i class="fa fa-shopping-cart"></i>
                 <h5>السله</h5>
               </button>
             </li>

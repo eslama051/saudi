@@ -10,6 +10,7 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
+        draggable="false"
       ></iframe>
       <div class="contact-info-card">
         <h4 class="card-title">ابقى على تواصل معنا</h4>

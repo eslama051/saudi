@@ -2,10 +2,11 @@
   <div class="carousel-container" v-if="items.length">
     <owl-carousel
       :margin="20"
+      :autoplay="true"
       :responsive="{
-        0: { items: 2 },
-        576: { items: 3 },
-        768: { items: 4 },
+        0: { items: 1 },
+        500: { items: 2 },
+        768: { items: 3 },
         1200: { items: 5 },
       }"
       responsiveBaseElement=".carousel-container"

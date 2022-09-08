@@ -39,11 +39,11 @@
     position: absolute;
     content: "";
     background: #43290a;
-    height: 2px;
+    height: 2.5px;
     bottom: 0;
     left: 0;
     width: 0%;
-    transition: all 0.5s ease-in;
+    transition: all 0.2s ease-in;
   }
   .nav-links {
     a {
@@ -95,7 +95,7 @@
         left: 50%;
         border-radius: 10px;
         transform: scale(0);
-        transition: all 0.4s;
+        transition: all 0.3s;
       }
       &:hover .nav-btn-span {
         transform: scale(1) translateX(-45%);
@@ -264,7 +264,7 @@
           border-radius: 50%;
           top: 0;
           left: 0;
-          transform: translate(-25%, -25%);
+          transform: translate(-20%, -25%);
           box-shadow: 0 0 15px 0 #ddd;
         }
       }

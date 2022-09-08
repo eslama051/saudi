@@ -69,6 +69,12 @@ Vue.use(VueGoogleMaps, {
   },
 });
 
+//ant design
+import { DatePicker } from "antd";
+import "antd/dist/antd.css";
+
+Vue.component("date-picker", DatePicker);
+
 //font awesome
 
 import { library } from "@fortawesome/fontawesome-svg-core";

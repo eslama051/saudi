@@ -126,27 +126,35 @@
   }
 }
 .carousel-container {
+  // display: flex;
   width: 80%;
   margin: 0rem auto;
+  @media screen and (max-width: 660px) {
+    width: 50%;
+  }
 }
 
 .wish-list {
   .wish-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: center;
+    column-gap: 2rem;
     margin-top: 2rem;
-    @media screen and (max-width: 450px) {
-      grid-template-columns: 1fr;
-      max-width: 250px;
-      margin: 2rem auto;
+    flex-wrap: wrap;
+    @media screen and (max-width: 550px) {
+      justify-content: center;
+      row-gap: 2rem;
     }
   }
   .latest-item {
     text-align: right;
     color: #43290a;
     cursor: pointer;
+    width: 45%;
     transition: all 0.3s;
+
     &:hover {
       opacity: 0.8;
     }
@@ -164,7 +172,7 @@
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 1rem;
-      height: 400px;
+      height: 350px;
       img {
         height: 100%;
         width: 100%;
@@ -208,6 +216,12 @@
         color: #958a7e;
         // margin: 1rem;
         text-decoration: line-through;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      width: 60%;
+      .img-container {
+        height: 250px;
       }
     }
   }

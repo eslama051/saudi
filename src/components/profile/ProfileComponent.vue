@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="profile-component-body">
-        <profile-item icon="box" title="طلباتي" link="/orders" />
+        <!-- <profile-item icon="box" title="طلباتي" link="/orders" /> -->
         <profile-item
           icon="wallet"
           title="رصيد الحساب"
