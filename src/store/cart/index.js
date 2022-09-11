@@ -12,6 +12,7 @@ export default {
     walletState: false,
     addresses: [],
     search: [],
+    filterState: false,
   },
   mutations,
   actions,

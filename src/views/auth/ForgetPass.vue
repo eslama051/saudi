@@ -44,13 +44,18 @@ export default {
 .password-container {
   text-align: center;
   z-index: 2;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 35rem;
   img {
     margin-bottom: 1rem;
   }
 }
 .password {
   //   background: white;
-  padding: 2rem 4rem;
+  padding: 2rem 1rem;
   text-align: center;
   border-radius: 20px;
   display: flex;
@@ -70,16 +75,17 @@ export default {
   }
   input {
     background: inherit;
-    padding: 0.8rem 2rem;
-    border-radius: 20px;
+    padding: 0.8rem 1rem;
+    // border-radius: 20px;
     width: 100%;
-    border: 1px solid gray;
+    border: none;
+    border-bottom: 2px solid gray;
     margin: 1rem;
     outline: none;
   }
   .main-btn {
     margin-top: 1rem;
-    padding: 0.6rem 4rem;
+    padding: 0.5rem 3.5rem;
   }
 }
 </style>

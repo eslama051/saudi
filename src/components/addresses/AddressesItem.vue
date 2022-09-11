@@ -39,9 +39,11 @@ export default {
     color: #43290a;
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: 1rem;
   }
   h4 {
     font-size: 1.2rem;
+    margin-bottom: 1rem;
     color: gray;
   }
   .addresses-item-btns {

@@ -1,12 +1,14 @@
 <template>
   <section>
-    <base-model v-if="isDeleteModel" @close-login-model="closeModel">
-      <h1>هل انت متاكد؟</h1>
-      <div class="model-btn">
-        <button @click="closeModel">إلغاء</button>
-        <button class="model-del-btn" @click="deleteConfirming">حذف</button>
-      </div>
-    </base-model>
+    <transition name="fade">
+      <base-model v-if="isDeleteModel" @close-login-model="closeModel">
+        <h1>هل انت متاكد؟</h1>
+        <div class="model-btn">
+          <button @click="closeModel">إلغاء</button>
+          <button class="model-del-btn" @click="deleteConfirming">حذف</button>
+        </div>
+      </base-model>
+    </transition>
 
     <title-header title="العناوين" link="/addresses" />
     <div class="addresses-container container">
@@ -79,8 +81,10 @@ export default {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
     row-gap: 1rem;
     flex-wrap: wrap;
+    min-height: 300px;
   }
 
   .no-addresses-container {
@@ -126,6 +130,13 @@ export default {
     &:hover {
       opacity: 0.6;
     }
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 }
 </style>

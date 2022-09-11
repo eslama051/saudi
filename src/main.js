@@ -5,7 +5,9 @@ import store from "./store";
 
 // bootstrap
 import "bootstrap/dist/css/bootstrap.css";
-
+import "bootstrap/dist/js/bootstrap.js";
+import "jquery/src/jquery.js";
+import "popper.js/dist/popper.min.js";
 // //import main scss
 import "./assets/scss/main.scss";
 
@@ -69,11 +71,11 @@ Vue.use(VueGoogleMaps, {
   },
 });
 
-//ant design
-import { DatePicker } from "antd";
-import "antd/dist/antd.css";
+//multi range slider
+import VueSlider from "vue-slider-component";
+import "vue-slider-component/theme/default.css";
 
-Vue.component("date-picker", DatePicker);
+Vue.component("VueSlider", VueSlider);
 
 //font awesome
 
@@ -116,5 +118,3 @@ new Vue({
   store,
   render: (h) => h(App),
 }).$mount("#app");
-
-import "bootstrap/dist/js/bootstrap.js";

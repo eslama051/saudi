@@ -220,7 +220,7 @@
           column-gap: 3rem;
           flex-direction: row-reverse;
           margin-top: 1rem;
-          // align-items: baseline;
+          align-items: stretch;
           // justify-content: space-between;
           @media screen and (max-width: 550px) {
             flex-direction: column;
@@ -252,9 +252,9 @@
             border: none;
             color: white;
             border-radius: 20px;
-            padding: 0rem 3rem;
-            font-weight: 100;
-            font-size: 1rem;
+            padding: 0.3rem 3rem;
+            // font-weight: ;
+            font-size: 1rem !important;
             transition: all 0.5s;
             border: 1px solid #43290a;
             &:hover {

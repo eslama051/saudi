@@ -2,7 +2,7 @@ div
 <template>
   <div>
     <title-header title="حسابي" link="/account/details"></title-header>
-    <form action="" @submit.stop>
+    <form action="" @submit.prevent="updateProfile">
       <h2 class="account-detail-title">تعديل الحساب</h2>
       <div class="img-edit">
         <img :src="userAvatar" id="account-detail-img-output" alt="" />
@@ -38,7 +38,7 @@ div
           <input type="text" placeholder="تأكيد كلمه المرور الجديدة" />
         </div>
       </transition>
-      <button class="main-btn" @click="updateProfile">حفظ</button>
+      <button class="main-btn">حفظ</button>
     </form>
   </div>
 </template>
@@ -68,6 +68,7 @@ export default {
       let image = document.getElementById("account-detail-img-output");
       image.src = URL.createObjectURL(event.target.files[0]);
       this.img = event.target.files[0];
+      console.log(this.img);
     },
     togglePassword() {
       this.passwordChanging = !this.passwordChanging;
@@ -77,6 +78,14 @@ export default {
     },
     updateProfile() {
       console.log("smt");
+      const formData = new FormData();
+      if (this.img != "") {
+        formData.append("image", this.img);
+      }
+      formData.append("email", this.userEmail);
+      formData.append("user_name", this.userName);
+      formData.append("phone", this.userPhone);
+      this.$store.dispatch("updateProfile", formData);
     },
   },
   async mounted() {
@@ -102,6 +111,9 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 3rem 0rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
   .account-detail-title {
     margin: 2rem;
     color: #43290a;
@@ -109,6 +121,8 @@ form {
     align-items: center;
     justify-content: center;
     column-gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 
     .password-btn-container {
       width: 40px;

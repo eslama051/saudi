@@ -8,6 +8,12 @@ export default {
     state.user_avatar = localStorage.getItem("saudi_marche_user_avatar");
     state.user_type = localStorage.getItem("saudi_marche_user_type");
   },
+  getProfile(state, payload) {
+    localStorage.setItem("saudi_marche_user_name", payload.user_name);
+    localStorage.setItem("saudi_marche_user_avatar", payload.image);
+
+    localStorage.getItem("saudi_marche_user_type", payload.user_type);
+  },
   signOut(state) {
     localStorage.clear();
     state.token = "";

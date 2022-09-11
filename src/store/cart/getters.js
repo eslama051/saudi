@@ -23,4 +23,7 @@ export default {
   searchResults(state) {
     return state.search;
   },
+  filterState(state) {
+    return state.filterState;
+  },
 };

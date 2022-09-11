@@ -8,7 +8,7 @@
         <i class="fa fa-xmark"></i>
       </button>
 
-      <div v-if="cart.data">
+      <div v-if="cart.data.items.length > 0">
         <h1>السله</h1>
         <h3>
           <span>{{ cartElements }} </span> عناصر في السله
@@ -46,7 +46,7 @@
       </div>
       <div v-else class="no-cart-items">
         <img src="../../assets/images/products.a6f24877.svg" alt="" />
-        <h1>لايوجد منتجات للحين</h1>
+        <h1>السله فارغه</h1>
       </div>
     </div>
   </section>

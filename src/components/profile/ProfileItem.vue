@@ -34,6 +34,7 @@ export default {
       document
         .getElementById("profile-component-container")
         .classList.remove("show-profile");
+      document.body.style.overflowY = "auto";
     },
   },
 };

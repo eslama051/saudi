@@ -58,6 +58,12 @@ export default {
   openCart(context) {
     context.commit("openCart");
   },
+  closeFilter(context) {
+    context.commit("closeFilter");
+  },
+  openFilter(context) {
+    context.commit("openFilter");
+  },
   openWallet(context) {
     context.commit("openWallet");
   },

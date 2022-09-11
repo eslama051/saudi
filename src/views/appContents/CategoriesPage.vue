@@ -21,7 +21,7 @@
           {{ sub_category.name }}
         </button>
       </div>
-      <button class="filter-btn">
+      <button class="filter-btn" @click="openFilter">
         فلتر<i class="smth fa-solid fa-sliders"></i>
       </button>
       <Transition name="slide" mode="out-in">
@@ -77,6 +77,9 @@ export default {
         .then((res) => {
           this.products = res.data.data.products;
         });
+    },
+    openFilter() {
+      this.$store.dispatch("openFilter");
     },
   },
   created() {

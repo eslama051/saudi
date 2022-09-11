@@ -38,6 +38,7 @@ export default {
   created() {
     this.$store.dispatch("getCart");
     this.$store.dispatch("getFavs");
+    this.$store.dispatch("getProfile");
   },
 };
 </script>

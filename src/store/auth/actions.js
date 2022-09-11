@@ -97,6 +97,8 @@ export default {
       })
       .then((res) => {
         context.commit("userData", res.data);
+        context.commit("getProfile", res.data.data);
+        context.commit("signin");
       });
   },
   signOut(context) {
@@ -174,6 +176,22 @@ export default {
     server
       .post("reset_password", formData, {
         headers: {
+          "Content-Type": "application/json",
+          "Accept-Language": "ar",
+        },
+      })
+      .then((res) => {
+        iziToast.success({
+          message: res.data.message,
+        });
+        router.push("/");
+      });
+  },
+  updateProfile(context, payload) {
+    server
+      .post("client/profile", payload, {
+        headers: {
+          Authorization: `Bearer ${context.state.token}`,
           "Content-Type": "application/json",
           "Accept-Language": "ar",
         },

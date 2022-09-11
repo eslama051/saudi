@@ -9,7 +9,7 @@
     flex-direction: row-reverse;
     .about-info {
       background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
-      padding: 4rem 1rem 4rem 2rem;
+      padding: 2rem 1rem 2rem 2rem;
       border-top-right-radius: 30px;
       border-bottom-right-radius: 20px;
       position: relative;
@@ -31,8 +31,8 @@
       transform: translateX(1rem);
       overflow: hidden;
       border-radius: 20px;
-      // height: 500px;
-      width: 400px;
+      height: 300px;
+      width: 350px;
       img {
         display: block;
         width: 100%;

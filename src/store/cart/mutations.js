@@ -30,6 +30,12 @@ export default {
   openCart(state) {
     state.cartState = true;
   },
+  closeFilter(state) {
+    state.filterState = false;
+  },
+  openFilter(state) {
+    state.filterState = true;
+  },
   openWallet(state) {
     state.walletState = true;
   },
